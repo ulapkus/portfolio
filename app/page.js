@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect, useRef } from "react";
 // import Link from "next/link";
-import arrow from "../public/images.png";
 import Image from "next/image";
-import browser from "../public/browser.png";
-import useScrollSnap from "react-use-scroll-snap";
-import backgroundd from "../public/backgroundd.png";
+import memorygame from "../public/memorygame.png";
+import rabbit from "../public/Bunny2.png";
+import calculator from "../public/calculator.png";
+import avocado from "../public/avocado.jpg";
+import iconimage from "../public/icons.png";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -40,13 +41,6 @@ const Navbar = () => {
     newZoomFactor = Math.min(newZoomFactor, maxZoomFactor);
 
     setZoomFactor(newZoomFactor);
-
-    // Show the tint when reaching the max zoom level
-    // if (newZoomFactor === maxZoomFactor) {
-    // setShowTint(true);
-    // } else {
-    //   setShowTint(false);
-    // }
   }, [scrollPosition]);
 
   useEffect(() => {
@@ -111,15 +105,12 @@ const Navbar = () => {
     }
   }, [scrollPosition]);
 
-  return (
-    <div
-      className="background"
-      // style={{ backgroundColor: bgColor }}
-      // ref={scrollRef}
-    >
-      {/* <Image src={backgroundd} /> */}
+  const darkness = Math.min(scrollPosition / 1500, 1);
 
+  return (
+    <div className="background">
       <div className="intro_border">
+        {/* <div className="scrollpositioncss">{scrollPosition}</div> */}
         <div
           className="intro_border_two"
           style={{
@@ -130,6 +121,7 @@ const Navbar = () => {
             height: "100vh",
             transform: `scale(${zoomFactor})`,
             transition: "transform 0.5s ease", // Smooth transition for zoom effect
+            position: "relative",
           }}
         >
           <div
@@ -137,34 +129,62 @@ const Navbar = () => {
               elementVisibility.element1 ? "visible" : "hidden"
             }`}
           >
-            {/* <div className={`content ${showTint ? "hidden" : ""}`}> */}
             <div className="hi">Hello</div>
             <div className="name">My name is Ula</div>
           </div>
-
           <div
             className={`elementtwo ${
               elementVisibility.element2 ? "visible" : "hidden"
             }`}
           >
-            {/* <div className="about-parent"> */}
-            {/* <div className="about"> */}
             <div className="about_child">
               I'm a self-taught web developer motivated by curiosity and
               passion. I focus on building frontends in React, but I have
               experience working across the entire stack.
             </div>
-            {/* </div> */}
           </div>
-          {/* </div> */}
-          {showTint && <div className="dark-tint" />}
-        </div>
-        <div className="projects">
-          <div className="word">hi!</div>
+          {showTint && (
+            <div
+              className="dark-tint"
+              style={{
+                backgroundColor: `rgba(0, 0, 0, ${darkness})`,
+                height: "100vh",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                zIndex: 1,
+              }}
+            />
+          )}
         </div>
       </div>
-
-      <div className="resume">
+      <div className="filler">
+        <div className="filler_container">
+          <div className="filler_line"></div>
+        </div>
+      </div>
+      <div className="projects">
+        <div className="projects-container">
+          <div className="website">
+            <Image className="museum" src={memorygame} />
+          </div>
+          <div className="website rabbit_background">
+            <Image className="rabbit" src={rabbit} />
+          </div>
+          <div className="website">
+            <Image className="museum" src={calculator} />
+          </div>
+          <div className="website">
+            <Image className="museum" src={avocado} />
+          </div>
+        </div>
+      </div>
+      <div className="skills">
+        <div className="skills_container">
+          <Image className="iconimage" src={iconimage} />
+        </div>
       </div>
     </div>
   );
