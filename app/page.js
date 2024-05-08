@@ -20,6 +20,32 @@ const Navbar = () => {
     element4: false,
     element5: false,
   });
+  const [lineLength, setLineLength] = useState(0);
+  const [startDrawingPoint, setStartDrawingPoint] = useState(600);
+  const endDrawingPoint = 800;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPositions = window.scrollY;
+      if (
+        scrollPositions >= startDrawingPoint &&
+        scrollPositions < endDrawingPoint
+      ) {
+        const newLength = scrollPositions - startDrawingPoint;
+        setLineLength(newLength);
+      } else if (scrollPositions >= endDrawingPoint) {
+        const newLengths = scrollPositions - 200;
+        setStartDrawingPoint(newLengths);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
@@ -33,7 +59,6 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Adjust these values to control the zoom behavior
     const zoomInThreshold = 800; // Adjust this value to change when zooming starts
     const maxZoomFactor = 1.3; // Adjust this value to change the maximum zoom level
 
@@ -44,7 +69,6 @@ const Navbar = () => {
   }, [scrollPosition]);
 
   useEffect(() => {
-    // Update visibility based on scroll position
     if (scrollPosition >= 0 && scrollPosition < 100) {
       setElementVisibility({
         element1: true,
@@ -85,14 +109,6 @@ const Navbar = () => {
         element3: false,
         element4: false,
         element5: false,
-      });
-    } else if (scrollPosition >= 500 && scrollPosition < 600) {
-      setElementVisibility({
-        element1: false,
-        element2: false,
-        element3: false,
-        element4: false,
-        element5: true,
       });
     } else {
       setElementVisibility({
@@ -161,9 +177,21 @@ const Navbar = () => {
         </div>
       </div>
       <div className="filler">
-        <div className="filler_container">
-          <div className="filler_line"></div>
-        </div>
+        {lineLength > 0 && (
+          <div
+            style={{
+              width: "30px",
+              height: `${lineLength}px`,
+              backgroundColor: "white",
+              position: "fixed",
+              top: `${startDrawingPoint}px`,
+              left: "50%",
+              overflow: "hidden",
+              zIndex: "1",
+            }}
+          ></div>
+        )}
+        <div className="temp_box"></div>
       </div>
       <div className="projects">
         <div className="projects-container">
