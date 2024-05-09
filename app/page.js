@@ -40,7 +40,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -180,9 +180,9 @@ const Navbar = () => {
         {lineLength > 0 && (
           <div
             style={{
-              width: "30px",
+              width: "1px",
               height: `${lineLength}px`,
-              backgroundColor: "white",
+              backgroundColor: "gray",
               position: "fixed",
               top: `${startDrawingPoint}px`,
               left: "50%",
@@ -193,22 +193,37 @@ const Navbar = () => {
         )}
         <div className="temp_box"></div>
       </div>
+
       <div className="projects">
         <div className="projects-container">
           <div className="website">
             <Image className="museum" src={memorygame} />
+            <div className="overlay">
+              <div className="image_text">Museum Memory Game</div>
+              <a
+                href="https://www.museummatch.org/"
+                target="_blank"
+                className="image_text_two"
+              >
+                EXPLORE
+              </a>
+            </div>
           </div>
           <div className="website rabbit_background">
             <Image className="rabbit" src={rabbit} />
-          </div>
-          <div className="website">
-            <Image className="museum" src={calculator} />
+            <div className="image_text">Habit Rabbit</div>
           </div>
           <div className="website">
             <Image className="museum" src={avocado} />
+            <div className="image_text">Art Portfolio</div>
+          </div>
+          <div className="website">
+            <Image className="museum" src={calculator} />
+            <div className="image_text">Calculator</div>
           </div>
         </div>
       </div>
+
       <div className="skills">
         <div className="skills_container">
           <Image className="iconimage" src={iconimage} />
