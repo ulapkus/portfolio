@@ -172,18 +172,30 @@ body {
 }
 
 .image_text_two {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   color: white;
   font-size: 1.5vh;
   font-family: monospace;
   letter-spacing: 0.5vw;
   text-decoration: none;
+  width: 15vw;
+  height: 3vh;
 }
 
 .overlay,
 .image_text,
 .image_text_two {
-  display: block;
+  /* display: block; */
   margin: 0;
+}
+
+.arrow {
+  object-fit: contain;
+  height: 3vh;
+  width: 3vw;
 }
 
 .website:hover .overlay {
@@ -213,7 +225,6 @@ body {
   opacity: 1;
   cursor: pointer;
 }
-
 
 .skills {
   position: relative;

@@ -8,6 +8,7 @@ import rabbit from "../public/Bunny2.png";
 import calculator from "../public/calculator.png";
 import avocado from "../public/avocado.jpg";
 import iconimage from "../public/icons.png";
+import arrow from "../public/rightarrow.png";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -205,8 +206,8 @@ const Navbar = () => {
                 target="_blank"
                 className="image_text_two"
               >
-                EXPLORE
-              </a>
+    <div className="explore"> EXPLORE </div>
+                <Image className="arrow" src={arrow} />              </a>
             </div>
           </div>
           <div className="website rabbit_background">
@@ -218,7 +219,8 @@ const Navbar = () => {
                 target="_blank"
                 className="image_text_two"
               >
-                EXPLORE
+                <div className="explore"> EXPLORE </div>
+                <Image className="arrow" src={arrow} />
               </a>
             </div>
           </div>
@@ -231,7 +233,8 @@ const Navbar = () => {
                 target="_blank"
                 className="image_text_two"
               >
-                EXPLORE
+                    <div className="explore"> EXPLORE </div>
+                <Image className="arrow" src={arrow} />
               </a>
             </div>
           </div>
@@ -244,8 +247,8 @@ const Navbar = () => {
                 target="_blank"
                 className="image_text_two"
               >
-                EXPLORE
-              </a>
+    <div className="explore"> EXPLORE </div>
+                <Image className="arrow" src={arrow} />              </a>
             </div>
           </div>
         </div>
