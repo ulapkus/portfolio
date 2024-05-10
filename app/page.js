@@ -211,15 +211,42 @@ const Navbar = () => {
           </div>
           <div className="website rabbit_background">
             <Image className="rabbit" src={rabbit} />
-            <div className="image_text">Habit Rabbit</div>
+            <div className="overlay">
+              <div className="image_text">Habit Rabbit</div>
+              <a
+                href="https://www.habit-rabbit.xyz/"
+                target="_blank"
+                className="image_text_two"
+              >
+                EXPLORE
+              </a>
+            </div>
           </div>
           <div className="website">
             <Image className="museum" src={avocado} />
-            <div className="image_text">Art Portfolio</div>
+            <div className="overlay">
+              <div className="image_text">Art Portfolio</div>
+              <a
+                href="https://www.museummatch.org/"
+                target="_blank"
+                className="image_text_two"
+              >
+                EXPLORE
+              </a>
+            </div>
           </div>
           <div className="website">
             <Image className="museum" src={calculator} />
-            <div className="image_text">Calculator</div>
+            <div className="overlay">
+              <div className="image_text">Calculator</div>
+              <a
+                href="https://calculator-ulapkus.vercel.app/"
+                target="_blank"
+                className="image_text_two"
+              >
+                EXPLORE
+              </a>
+            </div>
           </div>
         </div>
       </div>

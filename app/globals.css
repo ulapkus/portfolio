@@ -136,35 +136,32 @@ body {
   width: 100%;
   position: relative;
   overflow: hidden;
-  border: 1px solid blue;
 }
 
 .museum {
   height: 90vh;
-  /* width: 100%;
+  width: 100%;
   object-fit: cover;
   overflow: hidden;
   transition: transform 2.9s ease;
-  opacity: 0.5; */
+  opacity: 0.5;
 }
 
 .museum:hover {
-  /* transform: scale(1.2);
-  overflow: hidden; */
+  transform: scale(1.2);
+  overflow: hidden;
   opacity: 1;
   cursor: pointer;
 }
 
 .overlay {
-  padding-top: 80vh;
-  padding-left: 2vw;
   position: absolute;
-  top: 100%;
-  bottom: 0%;
+  padding: 0 0 2.5vh 2vw;
+  bottom: 0;
   width: 100%;
-  transition: bottom 0.5s, top 0.5s;
-  vertical-align: bottom;
-  border: 5px solid yellow;
+  transition: transform 0.5s;
+  transform: translateY(100%);
+  color: white;
 }
 
 .image_text {
@@ -178,9 +175,8 @@ body {
   color: white;
   font-size: 1.5vh;
   font-family: monospace;
-  letter-spacing: .5vw;
+  letter-spacing: 0.5vw;
   text-decoration: none;
-
 }
 
 .overlay,
@@ -191,8 +187,7 @@ body {
 }
 
 .website:hover .overlay {
-  bottom: 0%;
-  top: 0%;
+  transform: translateY(0);
 }
 
 .rabbit_background {
@@ -204,11 +199,21 @@ body {
 }
 
 .rabbit {
-  width: 90%;
   height: 80%;
+  width: 90%;
   object-fit: contain;
   overflow: hidden;
+  transition: transform 2.9s ease;
+  opacity: 0.5;
 }
+
+.rabbit:hover {
+  transform: scale(1.2);
+  overflow: hidden;
+  opacity: 1;
+  cursor: pointer;
+}
+
 
 .skills {
   position: relative;
