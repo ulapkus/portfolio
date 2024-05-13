@@ -7,8 +7,14 @@ import memorygame from "../public/memorygame.png";
 import rabbit from "../public/Bunny2.png";
 import calculator from "../public/calculator.png";
 import avocado from "../public/avocado.jpg";
-import iconimage from "../public/icons.png";
 import arrow from "../public/rightarrow.png";
+import cssimage from "../public/Icon5.png";
+import jsimage from "../public/Icon4.png";
+import reactimage from "../public/Icon3.png";
+import figmaimage from "../public/Icon1.png";
+import uiuximage from "../public/uiux.png";
+import htmlimage from "../public/Icon2.png";
+import temptwo from "../public/OIG3.jpeg";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -23,6 +29,34 @@ const Navbar = () => {
   });
   const [lineLength, setLineLength] = useState(0);
   const [startDrawingPoint, setStartDrawingPoint] = useState(600);
+  const [scrollLeftt, setScrollLeftt] = useState(0);
+
+  const scrollContainerRef = React.createRef();
+
+  const scrollRight = () => {
+    const scrollContainer = scrollContainerRef.current;
+    if (scrollContainer) {
+      const newScrollLeft = scrollContainer.scrollLeft + 250; // Adjust the scroll distance as needed
+      scrollContainer.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+      setScrollLeftt(newScrollLeft);
+    }
+  };
+
+  const scrollLeft = () => {
+    const scrollContainer = scrollContainerRef.current;
+    if (scrollContainer) {
+      const newScrollLeft = scrollContainer.scrollLeft - 250; // Adjust the scroll distance as needed
+      scrollContainer.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+      setScrollLeftt(newScrollLeft);
+    }
+  };
+
   const endDrawingPoint = 800;
 
   useEffect(() => {
@@ -127,7 +161,6 @@ const Navbar = () => {
   return (
     <div className="background">
       <div className="intro_border">
-        {/* <div className="scrollpositioncss">{scrollPosition}</div> */}
         <div
           className="intro_border_two"
           style={{
@@ -206,8 +239,9 @@ const Navbar = () => {
                 target="_blank"
                 className="image_text_two"
               >
-    <div className="explore"> EXPLORE </div>
-                <Image className="arrow" src={arrow} />              </a>
+                <div className="explore"> EXPLORE </div>
+                <Image className="arrow" src={arrow} />
+              </a>
             </div>
           </div>
           <div className="website rabbit_background">
@@ -233,7 +267,7 @@ const Navbar = () => {
                 target="_blank"
                 className="image_text_two"
               >
-                    <div className="explore"> EXPLORE </div>
+                <div className="explore"> EXPLORE </div>
                 <Image className="arrow" src={arrow} />
               </a>
             </div>
@@ -247,16 +281,49 @@ const Navbar = () => {
                 target="_blank"
                 className="image_text_two"
               >
-    <div className="explore"> EXPLORE </div>
-                <Image className="arrow" src={arrow} />              </a>
+                <div className="explore"> EXPLORE </div>
+                <Image className="arrow" src={arrow} />
+              </a>
             </div>
           </div>
         </div>
       </div>
-
       <div className="skills">
+        <div className="my-skills">MY SKILLS</div>
         <div className="skills_container">
-          <Image className="iconimage" src={iconimage} />
+              <button className="scroll-left" onClick={scrollLeft}>
+              Left
+            </button> 
+            <div className="skills-noarrows" ref={scrollContainerRef}>
+              <div className="skillimg">
+                <Image className="htmlimg skill" src={htmlimage} />
+              </div>
+              <div className="skillimg">
+                <Image className="cssimg skill" src={cssimage} />
+              </div>
+              <div className="skillimg">
+                <Image className="jsimg skill" src={jsimage} />
+              </div>
+              <div className="skillimg">
+                <Image className="reactimg skill" src={reactimage} />
+              </div>
+              <div className="skillimg">
+                <Image className="uiuximg skill" src={uiuximage} />
+              </div>
+              <div className="skillimg">
+                <Image className="figmaimg skill" src={figmaimage} />
+              </div>
+              <div className="skillimg">
+                <Image className="tempimg skill" src={temptwo} />
+              </div>
+              <div className="skillimg">
+                <Image className="temptwoimg skill" src={temptwo} />
+              </div>
+            </div>
+         
+             <button className="scroll-right" onClick={scrollRight}>
+              Right
+            </button>
         </div>
       </div>
     </div>
