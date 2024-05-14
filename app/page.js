@@ -29,33 +29,17 @@ const Navbar = () => {
   });
   const [lineLength, setLineLength] = useState(0);
   const [startDrawingPoint, setStartDrawingPoint] = useState(600);
-  const [scrollLeftt, setScrollLeftt] = useState(0);
 
-  const scrollContainerRef = React.createRef();
-
-  const scrollRight = () => {
-    const scrollContainer = scrollContainerRef.current;
-    if (scrollContainer) {
-      const newScrollLeft = scrollContainer.scrollLeft + 250; // Adjust the scroll distance as needed
-      scrollContainer.scrollTo({
-        left: newScrollLeft,
-        behavior: "smooth",
-      });
-      setScrollLeftt(newScrollLeft);
-    }
-  };
-
-  const scrollLeft = () => {
-    const scrollContainer = scrollContainerRef.current;
-    if (scrollContainer) {
-      const newScrollLeft = scrollContainer.scrollLeft - 250; // Adjust the scroll distance as needed
-      scrollContainer.scrollTo({
-        left: newScrollLeft,
-        behavior: "smooth",
-      });
-      setScrollLeftt(newScrollLeft);
-    }
-  };
+  const [icons, setIcons] = useState([
+    { src: htmlimage, alt: "HTML" },
+    { src: cssimage, alt: "CSS" },
+    { src: jsimage, alt: "JavaScript" },
+    { src: reactimage, alt: "React" },
+    { src: uiuximage, alt: "UI/UX" },
+    { src: figmaimage, alt: "Figma" },
+    { src: temptwo, alt: "Placeholder" },
+    { src: temptwo, alt: "Placeholder" },
+  ]);
 
   const endDrawingPoint = 800;
 
@@ -290,40 +274,77 @@ const Navbar = () => {
       </div>
       <div className="skills">
         <div className="my-skills">MY SKILLS</div>
-        <div className="skills_container">
-              <button className="scroll-left" onClick={scrollLeft}>
-              Left
-            </button> 
-            <div className="skills-noarrows" ref={scrollContainerRef}>
-              <div className="skillimg">
-                <Image className="htmlimg skill" src={htmlimage} />
-              </div>
-              <div className="skillimg">
-                <Image className="cssimg skill" src={cssimage} />
-              </div>
-              <div className="skillimg">
-                <Image className="jsimg skill" src={jsimage} />
-              </div>
-              <div className="skillimg">
-                <Image className="reactimg skill" src={reactimage} />
-              </div>
-              <div className="skillimg">
-                <Image className="uiuximg skill" src={uiuximage} />
-              </div>
-              <div className="skillimg">
-                <Image className="figmaimg skill" src={figmaimage} />
-              </div>
-              <div className="skillimg">
-                <Image className="tempimg skill" src={temptwo} />
-              </div>
-              <div className="skillimg">
-                <Image className="temptwoimg skill" src={temptwo} />
-              </div>
+        <div className="skills-noarrows">
+          <div className="skillimg">
+            <Image className="htmlimg skill" src={htmlimage} />
+            <div className="img_caption">HTML</div>
+          </div>
+          <div className="skillimg">
+            <Image className="cssimg skill" src={cssimage} />
+            <div className="img_caption">CSS</div>
+          </div>
+          <div className="skillimg">
+            <Image className="jsimg skill" src={jsimage} />
+            <div className="img_caption">JAVASCRIPT</div>
+          </div>
+          <div className="skillimg">
+            <Image className="reactimg skill" src={reactimage} />
+            <div className="img_caption">REACT.JS</div>
+          </div>
+          <div className="skillimg">
+            <Image className="uiuximg skill" src={uiuximage} />
+            <div className="img_caption">UI/UX</div>
+          </div>
+          <div className="skillimg">
+            <Image className="figmaimg skill" src={figmaimage} />
+            <div className="img_caption">FIGMA</div>
+          </div>
+          <div className="skillimg">
+            <Image className="tempimg skill" src={temptwo} />
+            <div className="img_caption">TEMP</div>
+          </div>
+          <div className="skillimg">
+            <Image className="temptwoimg skill" src={temptwo} />
+            <div className="img_caption">TEMP</div>
+          </div>
+          <div className="skillimg">
+            <Image className="htmlimg skill" src={htmlimage} />
+            <div className="img_caption">HTML</div>
+          </div>
+          <div className="skillimg">
+            <Image className="cssimg skill" src={cssimage} />
+            <div className="img_caption">CSS</div>
+          </div>
+          <div className="skillimg">
+            <Image className="jsimg skill" src={jsimage} />
+            <div className="img_caption">JAVASCRIPT</div>
+          </div>
+          <div className="skillimg">
+            <Image className="reactimg skill" src={reactimage} />
+            <div className="img_caption">REACT.JS</div>
+          </div>
+          <div className="skillimg">
+            <Image className="uiuximg skill" src={uiuximage} />
+            <div className="img_caption">UI/UX</div>
+          </div>
+          <div className="skillimg">
+            <Image className="figmaimg skill" src={figmaimage} />
+            <div className="img_caption">FIGMA</div>
+          </div>
+          <div className="skillimg">
+            <Image className="tempimg skill" src={temptwo} />
+            <div className="img_caption">TEMP</div>
+          </div>
+          <div className="skillimg">
+            <Image className="temptwoimg skill" src={temptwo} />
+            <div className="img_caption">TEMP</div>
+          </div>
+
+          {/* {icons.map((icon, index) => (
+            <div key={index} className="skillimg">
+              <Image className="skill" src={icon.src} alt={icon.alt} />
             </div>
-         
-             <button className="scroll-right" onClick={scrollRight}>
-              Right
-            </button>
+          ))} */}
         </div>
       </div>
     </div>
