@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 // import Link from "next/link";
 import Image from "next/image";
+import wavinghand from "../public/wavinghand.png";
 import memorygame from "../public/memorygame.png";
 import rabbit from "../public/Bunny2.png";
 import calculator from "../public/calculator.png";
@@ -40,6 +41,29 @@ const Navbar = () => {
     { src: temptwo, alt: "Placeholder" },
     { src: temptwo, alt: "Placeholder" },
   ]);
+  const [showLeftElement, setShowLeftElement] = useState(false);
+  const [showRightElement, setShowRightElement] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPositions = window.scrollY;
+
+      if (scrollPositions >= 2100) {
+        setShowLeftElement(true);
+      }
+
+      if (scrollPositions >= 2400) {
+        setShowRightElement(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    // return () => {
+    //   window.removeEventListener("scroll", handleScroll);
+    // };
+  }, [showLeftElement, showRightElement]);
 
   const endDrawingPoint = 800;
 
@@ -87,12 +111,14 @@ const Navbar = () => {
     setZoomFactor(newZoomFactor);
   }, [scrollPosition]);
 
-  const firstImageScale = Math.min(1 + scrollPosition / 5000, 1.3);
-  const secondImageTranslateY = Math.max(0, scrollPosition * 0.3);
-  const imageScale = Math.min(1 + scrollPosition / 800, 1.3);
+  const mountainsTranslateY = Math.max(0, scrollPosition * 0.5);
+  const mountainsScale = Math.min(1 + scrollPosition / 3000, 8);
 
-  const treesTranslateY = Math.max(0, scrollPosition);
-  const treesScale = Math.min(1 + scrollPosition / 800, 6);
+  const buildingsTranslateY = Math.max(0, scrollPosition * 0.4);
+  const buildingsScale = Math.min(1 + scrollPosition / 800, 8);
+
+  const treesTranslateY = Math.max(0, scrollPosition * 0.15);
+  const treesScale = Math.min(1 + scrollPosition / 800, 10);
 
   useEffect(() => {
     if (scrollPosition >= 0 && scrollPosition < 100) {
@@ -165,7 +191,15 @@ const Navbar = () => {
   return (
     <div className="main">
       <div className="background">
-        <div
+        <img
+          src="https://i.ibb.co/C0w5Zg6/mountains-v2b-copy.png"
+          className="mountains"
+          style={{
+            height: "180vh",
+            transform: `translateY(${mountainsTranslateY}px) scale(${mountainsScale})`,
+          }}
+        />
+        {/* <div
           className="mountains"
           style={{
             backgroundImage: `url('https://i.ibb.co/C0w5Zg6/mountains-v2b-copy.png')`,
@@ -177,46 +211,45 @@ const Navbar = () => {
             transition: "transform 0.3s ease",
             position: "absolute",
           }}
-        >
-          <img
-            className="buildings"
-            src="https://i.ibb.co/pjbYR4G/buildings.webp"
-            style={{
-              height: "100vh",
-              transform: `translateY(${treesTranslateY}px) scale(${treesScale})`,
-            }}
-          />
-          <img
-            className="trees"
-            src="https://i.ibb.co/pXmhy88/trees.webp"
-            style={{
-              height: "100vh",
-              transform: `translateY(${secondImageTranslateY}px) scale(${imageScale})`,
-            }}
-          />
-          {/* <div className="heading_container">
+        > */}
+        <img
+          className="buildings"
+          src="https://i.ibb.co/pjbYR4G/buildings.webp"
+          style={{
+            height: "90vh",
+            transform: `translateY(${buildingsTranslateY}px) scale(${buildingsScale})`,
+          }}
+        />
+        <img
+          className="trees"
+          src="https://i.ibb.co/pXmhy88/trees.webp"
+          style={{
+            height: "99vh",
+            transform: `translateY(${treesTranslateY}px) scale(${treesScale})`,
+          }}
+        />
+        {/* <div className="heading_container">
             <h1 className="name_intro">HELLO, MY NAME IS</h1>
             <h1 className="name">ULA LAPKUS</h1>
             <h1 className="name_caption">SELF-TAUGHT FULLSTACK ENGINEER</h1>
             <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
           </div> */}
 
-          {showTint && (
-            <div
-              className="dark-tint"
-              style={{
-                backgroundColor: `rgba(0, 0, 0, ${darkness})`,
-                height: "100vh",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                zIndex: 1,
-              }}
-            />
-          )}
-        </div>
+        {showTint && (
+          <div
+            className="dark-tint"
+            style={{
+              backgroundColor: `rgba(0, 0, 0, ${darkness})`,
+              height: "100vh",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 1,
+            }}
+          />
+        )}
       </div>
       <div className="new_filler">
         <div className="new_filler_child"></div>
@@ -238,7 +271,24 @@ const Navbar = () => {
         )}
       </div> */}
       <div className="projects">
-        <div className="projects-container">
+        <div className={`left-element ${showLeftElement ? "show" : ""}`}>
+          {/* Content of the left element */}
+          <p className="hello">Hey, nice to meet ya!</p>
+          <Image className="wavinghand" src={wavinghand} />
+          <p className="hello_description">
+            I'm a full stack developer passionate about
+            JavaScript, React, and the vast realm of web development. The blend
+            of creativity, logical thinking, and the ever-evolving tech
+            landscape fuels my enthusiasm for crafting web solutions. Beyond the
+            screen, you'll find me hiking, listening to audiobooks, and
+            traveling.
+          </p>
+        </div>
+        <div className={`right-element ${showRightElement ? "show" : ""}`}>
+          {/* Content of the right element */}
+          Right Element
+        </div>
+        {/* <div className="projects-container">
           <div className="website">
             <Image className="museum" src={memorygame} />
             <div className="overlay">
@@ -295,7 +345,7 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="skills">
         <div className="my-skills">MY SKILLS</div>

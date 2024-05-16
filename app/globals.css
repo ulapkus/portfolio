@@ -9,10 +9,6 @@ body {
   width: 100%;
 }
 
-.main {
-  border: 1px solid pink;
-}
-
 .background {
   position: sticky;
   top: 0px;
@@ -23,36 +19,27 @@ body {
   width: 100vw;
   overflow: hidden;
   opacity: 1;
-  border: 1px solid blue;
 }
 
 .mountains {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  /* position: relative; */
-  /* height: 100vh; */
-  /* overflow: hidden; */
+  position: absolute;
+  overflow: hidden;
   width: 100%;
-  /* padding-bottom: 10vh; */
+  z-index: 1;
 }
 
 .buildings {
   position: absolute;
-
   overflow: hidden;
   width: 100%;
-  border: 1px solid pink;
-  z-index: 1;
+  z-index: 2;
 }
 
 .trees {
   position: absolute;
   overflow: hidden;
   width: 100%;
-  border: 1px solid pink;
-  z-index: 2;
+  z-index: 3;
 }
 
 .heading_container {
@@ -95,8 +82,7 @@ h1 {
   right: 0;
   bottom: 0;
   z-index: 2;
-  height: 100vh;
-  /* border: 1px solid yellow; */
+  height: 150vh;
 }
 
 .new_filler_child {
@@ -133,17 +119,80 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 90vh;
-  /* padding-bottom: 80vh; */
   overflow: hidden;
 }
 
 .projects {
   position: relative;
-  height: 100vh;
-  z-index: 2;
-  padding: 10vh 0 10vh 0;
-  background-color: black;
   height: 120vh;
+}
+.left-element {
+  border: 1px solid blue;
+  position: absolute;
+  top: 50%;
+  margin-left: 15vw;
+  height: 50vh;
+  color: white;
+  width: 30vw;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.right-element {
+  border: 1px solid red;
+  color: white;
+  position: absolute;
+  width: 20vw;
+  height: 50vh;
+  margin-right: 15vw;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.left-element.show {
+  animation: slideFromLeft 0.5s ease forwards;
+}
+
+.right-element.show {
+  animation: slideFromRight 0.5s ease forwards;
+}
+
+.hello {
+  font-size: 3vw;
+  font-family: monospace;
+}
+
+.wavinghand {
+  height: 4vh;
+  width: 4vh;
+}
+
+.hello_description {
+  font-size: 2vw;
+  font-family: monospace;
+}
+
+@keyframes slideFromLeft {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    right: -100%;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
 }
 
 .projects-container {
@@ -212,7 +261,6 @@ h1 {
 .overlay,
 .image_text,
 .image_text_two {
-  /* display: block; */
   margin: 0;
 }
 
@@ -281,12 +329,6 @@ h1 {
 }
 
 .skills-noarrows {
-  /* 
-  height: auto;
-  width: 100vw;
-  overflow-x: scroll;
-  overflow: hidden;
-   */
   display: flex;
   /* border: 0.1px solid white; */
   overflow: hidden;
