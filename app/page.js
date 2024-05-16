@@ -87,6 +87,13 @@ const Navbar = () => {
     setZoomFactor(newZoomFactor);
   }, [scrollPosition]);
 
+  const firstImageScale = Math.min(1 + scrollPosition / 5000, 1.3);
+  const secondImageTranslateY = Math.max(0, scrollPosition * 0.3);
+  const imageScale = Math.min(1 + scrollPosition / 800, 1.3);
+
+  const treesTranslateY = Math.max(0, scrollPosition);
+  const treesScale = Math.min(1 + scrollPosition / 800, 6);
+
   useEffect(() => {
     if (scrollPosition >= 0 && scrollPosition < 100) {
       setElementVisibility({
@@ -142,41 +149,58 @@ const Navbar = () => {
 
   const darkness = Math.min(scrollPosition / 1500, 1);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="background">
-      <div className="intro_border">
+    <div className="main">
+      <div className="background">
         <div
-          className="intro_border_two"
+          className="mountains"
           style={{
-            backgroundImage: `url('https://i.ibb.co/TL08NVy/backgroundd.png')`,
+            backgroundImage: `url('https://i.ibb.co/C0w5Zg6/mountains-v2b-copy.png')`,
             backgroundSize: `${zoomFactor * 100}%`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            height: "100vh",
-            transform: `scale(${zoomFactor})`,
-            transition: "transform 0.5s ease", // Smooth transition for zoom effect
-            position: "relative",
+            height: "150vh",
+            transform: `scale(${firstImageScale})`,
+            transition: "transform 0.3s ease",
+            position: "absolute",
           }}
         >
-          <div
-            className={`element ${
-              elementVisibility.element1 ? "visible" : "hidden"
-            }`}
-          >
-            <div className="hi">Hello</div>
-            <div className="name">My name is Ula</div>
-          </div>
-          <div
-            className={`elementtwo ${
-              elementVisibility.element2 ? "visible" : "hidden"
-            }`}
-          >
-            <div className="about_child">
-              I'm a self-taught web developer motivated by curiosity and
-              passion. I focus on building frontends in React, but I have
-              experience working across the entire stack.
-            </div>
-          </div>
+          <img
+            className="buildings"
+            src="https://i.ibb.co/pjbYR4G/buildings.webp"
+            style={{
+              height: "100vh",
+              transform: `translateY(${treesTranslateY}px) scale(${treesScale})`,
+            }}
+          />
+          <img
+            className="trees"
+            src="https://i.ibb.co/pXmhy88/trees.webp"
+            style={{
+              height: "100vh",
+              transform: `translateY(${secondImageTranslateY}px) scale(${imageScale})`,
+            }}
+          />
+          {/* <div className="heading_container">
+            <h1 className="name_intro">HELLO, MY NAME IS</h1>
+            <h1 className="name">ULA LAPKUS</h1>
+            <h1 className="name_caption">SELF-TAUGHT FULLSTACK ENGINEER</h1>
+            <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
+          </div> */}
+
           {showTint && (
             <div
               className="dark-tint"
@@ -194,11 +218,14 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <div className="filler">
+      <div className="new_filler">
+        <div className="new_filler_child"></div>
+      </div>
+      {/* <div className="filler">
         {lineLength > 0 && (
           <div
             style={{
-              width: "1px",
+              width: "100px",
               height: `${lineLength}px`,
               backgroundColor: "gray",
               position: "fixed",
@@ -209,9 +236,7 @@ const Navbar = () => {
             }}
           ></div>
         )}
-        <div className="temp_box"></div>
-      </div>
-
+      </div> */}
       <div className="projects">
         <div className="projects-container">
           <div className="website">
