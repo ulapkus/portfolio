@@ -75,15 +75,18 @@ h1 {
 }
 
 .name {
-  font-size: 6vw;
+  font-size: 4vw;
   letter-spacing: 0.2vw;
   text-shadow: 0 0 18px #b1ffeba7;
+  font-family: PixCon;
 }
 
 .name_caption {
   font-size: 1.4vw;
   letter-spacing: 0.2vw;
-  font-family: monospace;
+  font-family: "Erbos Draco 1st Open NBP";
+  font-weight: 100;
+  /* font-family: monospace; */
 }
 
 .new_filler {
