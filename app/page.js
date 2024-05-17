@@ -191,6 +191,12 @@ const Navbar = () => {
   return (
     <div className="main">
       <div className="background">
+        <div className="heading_container">
+          <h1 className="name_intro">HELLO, MY NAME IS</h1>
+          <h1 className="name">ULA LAPKUS</h1>
+          <h1 className="name_caption">SELF-TAUGHT FULLSTACK ENGINEER</h1>
+          <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
+        </div>
         <img
           src="https://i.ibb.co/C0w5Zg6/mountains-v2b-copy.png"
           className="mountains"
@@ -228,12 +234,6 @@ const Navbar = () => {
             transform: `translateY(${treesTranslateY}px) scale(${treesScale})`,
           }}
         />
-        {/* <div className="heading_container">
-            <h1 className="name_intro">HELLO, MY NAME IS</h1>
-            <h1 className="name">ULA LAPKUS</h1>
-            <h1 className="name_caption">SELF-TAUGHT FULLSTACK ENGINEER</h1>
-            <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
-          </div> */}
 
         {showTint && (
           <div
@@ -272,16 +272,19 @@ const Navbar = () => {
       </div> */}
       <div className="projects">
         <div className={`left-element ${showLeftElement ? "show" : ""}`}>
-          {/* Content of the left element */}
-          <p className="hello">Hey, nice to meet ya!</p>
-          <Image className="wavinghand" src={wavinghand} />
+          <div>
+            <p className="hello">
+              Hey
+              <Image className="wavinghand" src={wavinghand} />
+            </p>
+            <p className="hello_two">Nice to meet ya!</p>
+          </div>
           <p className="hello_description">
-            I'm a full stack developer passionate about
-            JavaScript, React, and the vast realm of web development. The blend
-            of creativity, logical thinking, and the ever-evolving tech
-            landscape fuels my enthusiasm for crafting web solutions. Beyond the
-            screen, you'll find me hiking, listening to audiobooks, and
-            traveling.
+            I'm a full stack developer passionate about JavaScript, React, and
+            the vast realm of web development. The blend of creativity, logical
+            thinking, and the ever-evolving tech landscape fuels my enthusiasm
+            for crafting web solutions. Beyond the screen, you'll find me
+            hiking, listening to audiobooks, and traveling.
           </p>
         </div>
         <div className={`right-element ${showRightElement ? "show" : ""}`}>
@@ -422,6 +425,85 @@ const Navbar = () => {
           ))} */}
         </div>
       </div>
+      <div className="my_projects">
+        <div className="website">
+          <Image className="museum" src={memorygame} />
+          {/* <div className="overlay">
+            <div className="image_text">Museum Memory Game</div>
+            <a
+              href="https://www.museummatch.org/"
+              target="_blank"
+              className="image_text_two"
+            >
+              <div className="explore"> EXPLORE </div>
+              <Image className="arrow" src={arrow} />
+            </a>
+          </div> */}
+          <div className="description">
+            <p className="title">Museum Memory Game</p>
+            <div>React</div>
+            <div>HTML</div>
+          </div>
+        </div>
+        <div className="website">
+          <div className="description">
+            <p className="title">Habit Rabbit</p>
+            <div className="tech_container">
+              <div className="tech">React.js</div>
+              <div className="tech">NextAuth</div>
+              <div className="tech">MongoDB</div>
+            </div>
+          </div>
+          <div className="rabbit_background">
+            <Image className="rabbit" src={rabbit} />
+          </div>
+          {/* <div className="overlay">
+            <div className="image_text">Habit Rabbit</div>
+            <a
+              href="https://www.habit-rabbit.xyz/"
+              target="_blank"
+              className="image_text_two"
+            >
+              <div className="explore"> EXPLORE </div>
+              <Image className="arrow" src={arrow} />
+            </a>
+          </div> */}
+        </div>
+        <div className="website">
+          <Image className="museum" src={avocado} />
+          {/* <div className="overlay">
+            <div className="image_text">Art Portfolio</div>
+            <a
+              href="https://www.museummatch.org/"
+              target="_blank"
+              className="image_text_two"
+            >
+              <div className="explore"> EXPLORE </div>
+              <Image className="arrow" src={arrow} />
+            </a>
+          </div> */}{" "}
+          <div className="description">Description</div>
+        </div>
+        <div className="website">
+          {" "}
+          <div className="description">Description</div>
+          <Image className="museum" src={calculator} />
+          {/* <div className="overlay">
+            <div className="image_text">Calculator</div>
+            <a
+              href="https://calculator-ulapkus.vercel.app/"
+              target="_blank"
+              className="image_text_two"
+            >
+              <div className="explore"> EXPLORE </div>
+              <Image className="arrow" src={arrow} />
+            </a>
+          </div> */}
+        </div>
+      </div>
+      {/* <div className="footnote">
+     Linked in, etc..
+      </div> */}
     </div>
   );
 };
