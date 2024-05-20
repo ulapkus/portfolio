@@ -42,9 +42,14 @@ body {
   z-index: 3;
 }
 
+.main {
+  position: absolute;
+  z-index: 1;
+}
+
 .heading_container {
   position: absolute;
-  left: 30%;
+  left: 28%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,34 +64,27 @@ h1 {
   padding: 0;
 }
 
-.moon {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: 50px;
-  transition: transform 0.1s linear;
-  height: 50vh;
-}
-
 .name_intro {
-  font-size: 1.4vw;
+  font-size: 1vw;
   letter-spacing: 0.2vw;
-  font-family: monospace;
+  font-family: "Erbos Draco 1st Open NBP";
 }
 
 .name {
-  font-size: 4vw;
+  font-size: 4.6vw;
   letter-spacing: 0.2vw;
   text-shadow: 0 0 18px #b1ffeba7;
   font-family: PixCon;
+  padding: 0 0 12px 0;
+  margin: 0;
 }
 
 .name_caption {
-  font-size: 1.4vw;
+  font-size: 1vw;
   letter-spacing: 0.2vw;
   font-family: "Erbos Draco 1st Open NBP";
   font-weight: 100;
-  /* font-family: monospace; */
+  padding-bottom: 15px;
 }
 
 .new_filler {
@@ -111,6 +109,7 @@ h1 {
   font-size: 3vh;
   color: white;
   font-size: 2vh;
+  border: 1px solid blue;
 }
 
 .hidden {
@@ -138,119 +137,113 @@ h1 {
 }
 
 .projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
   position: relative;
-  height: 120vh;
+  height: 100vh;
+  border: 1px solid yellow;
+  width: 100%;
+  padding: 4% 0 4% 0;
+  margin: 0;
 }
 
-.my_projects {
+.left_element {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  height: 300vh;
-  width: 100%;
-  padding: 5%;
-  margin: 0;
-}
-
-.left-element {
-  position: absolute;
-  top: 50%;
-  margin-left: 10vw;
-  height: 50vh;
-  color: white;
-  width: 40vw;
-  transform: translateY(-50%);
-  opacity: 0;
-  height: auto;
-}
-
-.right-element {
+  height: 100%;
+  width: 60vw;
   border: 1px solid red;
-  color: white;
-  position: absolute;
-  width: 20vw;
-  height: 50vh;
-  margin-right: 15vw;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
+  font-size: 2vh;
+  padding-left: 10vw;
 }
 
-.left-element.show {
-  animation: slideFromLeft 0.5s ease forwards;
+.right_element {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  width: 40vw;
+  height: 100%;
+  object-fit: contain;
+  overflow: hidden;
 }
 
-.right-element.show {
-  animation: slideFromRight 0.5s ease forwards;
+.ula_pixelart {
+  border: 1px solid blue;
+  height: 80%;
+}
+
+.pixelart_caption {
+  font-family: PixCon;
+  font-size: 2vw;
+  text-wrap: nowrap;
+  border: 1px solid blue;
+  height: 80%;
+  padding-top: 2vh;
+  color: #fef7d4;
+}
+
+.hello_container {
+  border: 1px solid blue;
+  height: auto;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .hello {
-  font-size: 4vw;
-  font-family: monospace;
-  /* border: 1px solid yellow; */
+  font-size: 5vw;
+  font-family: PixCon;
   text-wrap: nowrap;
   margin: 0;
-  padding: 0 0 1vh 0;
+  padding: 0 0 0 0;
+  color: #fef7d4;
+  text-shadow: 0 0 13px #fef7d4;
 }
 
 .hello_two {
-  font-size: 2.5vw;
-  font-family: monospace;
-  /* border: 1px solid yellow; */
+  font-size: 5vw;
+  font-family: PixCon;
   text-wrap: nowrap;
+  color: #fef7d4;
   margin: 0;
   padding: 0;
+  text-shadow: 0 0 13px #fef7d4;
 }
 
 .wavinghand {
-  height: 6vh;
-  width: 6vh;
+  height: 11vh;
+  width: 11vh;
+  filter: drop-shadow(0px 0px 4px #fef7d4);
 }
 
 .hello_description {
-  font-size: 2vw;
+  font-size: 1.65vw;
   font-family: monospace;
+  color: #fef7d4;
 }
 
-@keyframes slideFromLeft {
-  from {
-    left: -100%;
-    opacity: 0;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes slideFromRight {
-  from {
-    right: -100%;
-    opacity: 0;
-  }
-  to {
-    right: 0;
-    opacity: 1;
-  }
-}
-
-.projects-container {
+/* .projects-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 100vh;
   padding: 0 5vw 0 5vw;
-}
+} */
 
 .website {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 55vh;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -258,7 +251,6 @@ h1 {
 
 .museum {
   height: 70vh;
-  /* width: 100%; */
   width: 50vw;
   object-fit: cover;
   overflow: hidden;
@@ -279,39 +271,75 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 55vh;
   color: white;
   font-size: 10vh;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
+  gap: 5%;
 }
 
 .title {
   color: white;
   font-size: 5vh;
   font-family: monospace;
+  letter-spacing: 0.7vw;
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+}
+
+.web_caption {
+  color: white;
+  font-size: 1vw;
+  font-family: monospace;
+  padding: 2vh 2vw 2vh 2vw;
+  /* border: 1px solid blue; */
+}
+
+.see_live {
+  color: white;
+  font-size: 1.2vw;
+  padding: 2% 1.5% 2% 2%;
+  font-family: monospace;
+  background-color: #1d4938;
+  letter-spacing: 0.5vw;
 }
 
 .tech_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: flex-end;
+  gap: 5%;
+  width: 90%;
+  height: 5vh;
+}
+
+.my_projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 7%;
-  border: 1px solid blue;
+  position: absolute;
+  height: 300vh;
   width: 100%;
-  height: 10vh;
+  padding: 5%;
+  margin: 0;
 }
 
 .tech {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: white;
-  font-size: 2vh;
+  font-size: 0.9vw;
   font-family: monospace;
-  padding: 5%;
+  padding: 3%;
   border: 0.5px solid white;
   border-radius: 15px;
-  height: 6vh;
+  height: 4vh;
   width: 8vw;
-  text-align: center;
 }
 
 .overlay {
@@ -367,8 +395,9 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: #1d4938;
+  gap: 3%;
   width: 50vw;
-  height: 90vh;
+  height: 55vh;
 }
 
 .rabbit {
@@ -378,6 +407,8 @@ h1 {
   overflow: hidden;
   transition: transform 2.9s ease;
   opacity: 0.5;
+  margin-bottom: 6vh;
+  margin-top: 10vh;
 }
 
 /* .rabbit:hover {
@@ -416,7 +447,6 @@ h1 {
 
 .skills-noarrows {
   display: flex;
-  /* border: 0.1px solid white; */
   overflow: hidden;
   height: auto;
   margin-top: 5vh;

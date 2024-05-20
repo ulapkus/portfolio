@@ -41,29 +41,6 @@ const Navbar = () => {
     { src: temptwo, alt: "Placeholder" },
     { src: temptwo, alt: "Placeholder" },
   ]);
-  const [showLeftElement, setShowLeftElement] = useState(false);
-  const [showRightElement, setShowRightElement] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPositions = window.scrollY;
-
-      if (scrollPositions >= 2100) {
-        setShowLeftElement(true);
-      }
-
-      if (scrollPositions >= 2400) {
-        setShowRightElement(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup
-    // return () => {
-    //   window.removeEventListener("scroll", handleScroll);
-    // };
-  }, [showLeftElement, showRightElement]);
 
   const endDrawingPoint = 800;
 
@@ -271,25 +248,30 @@ const Navbar = () => {
         )}
       </div> */}
       <div className="projects">
-        <div className={`left-element ${showLeftElement ? "show" : ""}`}>
-          <div>
-            <p className="hello">
-              Hey
-              <Image className="wavinghand" src={wavinghand} />
+        <div className="left_element">
+          <div className="hello_container">
+            <p className="hello">HELLO</p>
+            <p className="hello_two">
+              WORLD <Image className="wavinghand" src={wavinghand} />
             </p>
-            <p className="hello_two">Nice to meet ya!</p>
           </div>
           <p className="hello_description">
-            I'm a full stack developer passionate about JavaScript, React, and
-            the vast realm of web development. The blend of creativity, logical
-            thinking, and the ever-evolving tech landscape fuels my enthusiasm
-            for crafting web solutions. Beyond the screen, you'll find me
-            hiking, listening to audiobooks, and traveling.
+            I'm a full-stack developer using JavaScript and React to turn pixels
+            on a screen into full-fledged user experiences. I’m passionate about
+            leveraging the ever-evolving tech landscape to create human
+            solutions that surprise & delight.
+          </p>
+          <p className="hello_description">
+            Beyond the screen, you'll find me hiking, listening to audiobooks,
+            and traveling.
           </p>
         </div>
-        <div className={`right-element ${showRightElement ? "show" : ""}`}>
-          {/* Content of the right element */}
-          Right Element
+        <div className="right_element">
+          <img
+            className="ula_pixelart"
+            src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
+          />
+          <p className="pixelart_caption">I'M ULA!</p>
         </div>
         {/* <div className="projects-container">
           <div className="website">
@@ -447,15 +429,26 @@ const Navbar = () => {
         </div>
         <div className="website">
           <div className="description">
-            <p className="title">Habit Rabbit</p>
+            <p className="title">HABIT RABBIT</p>
+            <div className="web_caption">
+              The "Habit Rabbit" helps users establish and monitor their daily
+              routines by allowing them to set and track progress on various
+              habits or tasks. With intuitive interfaces and customizable
+              features, users can easily visualize their habits and stay
+              motivated to achieve their goals.
+            </div>
+
+            <div className="see_live">SEE LIVE</div>
+          </div>
+          <div className="rabbit_background">
+            <Image className="rabbit" src={rabbit} />
             <div className="tech_container">
               <div className="tech">React.js</div>
               <div className="tech">NextAuth</div>
               <div className="tech">MongoDB</div>
+              <div className="tech">CSS</div>
+              <div className="tech">Next.js</div>
             </div>
-          </div>
-          <div className="rabbit_background">
-            <Image className="rabbit" src={rabbit} />
           </div>
           {/* <div className="overlay">
             <div className="image_text">Habit Rabbit</div>
