@@ -408,90 +408,27 @@ const Navbar = () => {
         </div>
       </div>
       <div className="my_projects">
-        <div className="website">
-          <Image className="museum" src={memorygame} />
-          {/* <div className="overlay">
-            <div className="image_text">Museum Memory Game</div>
-            <a
-              href="https://www.museummatch.org/"
-              target="_blank"
-              className="image_text_two"
-            >
-              <div className="explore"> EXPLORE </div>
-              <Image className="arrow" src={arrow} />
-            </a>
-          </div> */}
-          <div className="description">
-            <p className="title">Museum Memory Game</p>
-            <div>React</div>
-            <div>HTML</div>
-          </div>
-        </div>
-        <div className="website">
-          <div className="description">
+        <div className="my_projects_left">
+          <div className="website">
             <p className="title">HABIT RABBIT</p>
-            <div className="web_caption">
-              The "Habit Rabbit" helps users establish and monitor their daily
-              routines by allowing them to set and track progress on various
-              habits or tasks. With intuitive interfaces and customizable
-              features, users can easily visualize their habits and stay
-              motivated to achieve their goals.
-            </div>
-
-            <div className="see_live">SEE LIVE</div>
           </div>
-          <div className="rabbit_background">
-            <Image className="rabbit" src={rabbit} />
-            <div className="tech_container">
-              <div className="tech">React.js</div>
-              <div className="tech">NextAuth</div>
-              <div className="tech">MongoDB</div>
-              <div className="tech">CSS</div>
-              <div className="tech">Next.js</div>
-            </div>
+          <div className="website">
+            <p className="title">MUSEUM MEMORY</p>
           </div>
-          {/* <div className="overlay">
-            <div className="image_text">Habit Rabbit</div>
-            <a
-              href="https://www.habit-rabbit.xyz/"
-              target="_blank"
-              className="image_text_two"
-            >
-              <div className="explore"> EXPLORE </div>
-              <Image className="arrow" src={arrow} />
-            </a>
-          </div> */}
         </div>
-        <div className="website">
-          <Image className="museum" src={avocado} />
-          {/* <div className="overlay">
-            <div className="image_text">Art Portfolio</div>
-            <a
-              href="https://www.museummatch.org/"
-              target="_blank"
-              className="image_text_two"
-            >
-              <div className="explore"> EXPLORE </div>
-              <Image className="arrow" src={arrow} />
-            </a>
-          </div> */}{" "}
-          <div className="description">Description</div>
+        <div className="my_projects_center">
+          <div className="website">
+            <p className="title">CALCULATOR</p>
+          </div>
+          <div className="website">
+            <p className="title">KRISTES ART</p>
+          </div>
         </div>
-        <div className="website">
-          {" "}
-          <div className="description">Description</div>
-          <Image className="museum" src={calculator} />
-          {/* <div className="overlay">
-            <div className="image_text">Calculator</div>
-            <a
-              href="https://calculator-ulapkus.vercel.app/"
-              target="_blank"
-              className="image_text_two"
-            >
-              <div className="explore"> EXPLORE </div>
-              <Image className="arrow" src={arrow} />
-            </a>
-          </div> */}
+        <div className="my_projects_right">
+          <div className="resume">
+            <p className="title">MY_RESUME</p>
+            <p className="title">.PDF</p>
+          </div>
         </div>
       </div>
       {/* <div className="footnote">

@@ -109,7 +109,6 @@ h1 {
   font-size: 3vh;
   color: white;
   font-size: 2vh;
-  border: 1px solid blue;
 }
 
 .hidden {
@@ -144,7 +143,6 @@ h1 {
   gap: 5%;
   position: relative;
   height: 100vh;
-  border: 1px solid yellow;
   width: 100%;
   padding: 4% 0 4% 0;
   margin: 0;
@@ -153,44 +151,42 @@ h1 {
 .left_element {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
-  width: 60vw;
-  border: 1px solid red;
+  width: 57vw;
   font-size: 2vh;
-  padding-left: 10vw;
+  padding: 5vh 0 0 8vw;
 }
 
 .right_element {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  border: 1px solid red;
-  width: 40vw;
+  gap: 5%;
+  width: 45vw;
   height: 100%;
   object-fit: contain;
+  padding: 0 0 0 5vw;
   overflow: hidden;
 }
 
 .ula_pixelart {
-  border: 1px solid blue;
-  height: 80%;
+  height: 76%;
 }
 
 .pixelart_caption {
   font-family: PixCon;
-  font-size: 2vw;
+  font-size: 1.8vw;
   text-wrap: nowrap;
-  border: 1px solid blue;
   height: 80%;
-  padding-top: 2vh;
+  padding-top: 3.5vh;
   color: #fef7d4;
+  text-shadow: 0 0 4px #fef7d4;
 }
 
 .hello_container {
-  border: 1px solid blue;
   height: auto;
   width: 100%;
   padding: 0;
@@ -198,17 +194,17 @@ h1 {
 }
 
 .hello {
-  font-size: 5vw;
+  font-size: 5.5vw;
   font-family: PixCon;
   text-wrap: nowrap;
-  margin: 0;
+  margin: 0 0 -4vh 0;
   padding: 0 0 0 0;
   color: #fef7d4;
   text-shadow: 0 0 13px #fef7d4;
 }
 
 .hello_two {
-  font-size: 5vw;
+  font-size: 5.5vw;
   font-family: PixCon;
   text-wrap: nowrap;
   color: #fef7d4;
@@ -225,8 +221,8 @@ h1 {
 
 .hello_description {
   font-size: 1.65vw;
-  font-family: monospace;
   color: #fef7d4;
+  font-weight: 200;
 }
 
 /* .projects-container {
@@ -243,10 +239,22 @@ h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 55vh;
+  height: 50%;
   width: 100%;
   position: relative;
   overflow: hidden;
+  border: 1px solid red;
+}
+
+.resume {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid red;
 }
 
 .museum {
@@ -274,18 +282,20 @@ h1 {
   height: 55vh;
   color: white;
   font-size: 10vh;
-  /* border: 1px solid blue; */
   gap: 5%;
 }
 
 .title {
   color: white;
-  font-size: 5vh;
+  font-size: 1.8vw;
   font-family: monospace;
-  letter-spacing: 0.7vw;
   font-weight: bolder;
   padding: 0;
   margin: 0;
+  font-family: PixCon;
+  text-wrap: nowrap;
+  color: #fef7d4;
+  /* text-shadow: 0 0 13px #fef7d4; */
 }
 
 .web_caption {
@@ -293,7 +303,6 @@ h1 {
   font-size: 1vw;
   font-family: monospace;
   padding: 2vh 2vw 2vh 2vw;
-  /* border: 1px solid blue; */
 }
 
 .see_live {
@@ -317,14 +326,33 @@ h1 {
 
 .my_projects {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   position: absolute;
-  height: 300vh;
-  width: 100%;
-  padding: 5%;
+  height: 100vh;
+  width: 100vw;
+  padding: 6% 2% 6% 2%;
   margin: 0;
+  border: 1px solid blue;
+}
+
+.my_projects_left {
+  border: 1px solid blue;
+  height: 100%;
+  width: 45vw;
+}
+
+.my_projects_center {
+  border: 1px solid blue;
+  height: 100%;
+  width: 22vw;
+}
+
+.my_projects_right {
+  border: 1px solid blue;
+  height: 100%;
+  width: 24vw;
 }
 
 .tech {
@@ -385,9 +413,9 @@ h1 {
   width: 3vw;
 }
 
-.website:hover .overlay {
+/* .website:hover .overlay {
   transform: translateY(0);
-}
+} */
 
 .rabbit_background {
   display: flex;
