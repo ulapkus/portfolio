@@ -438,6 +438,9 @@ const Navbar = () => {
             </div>
             <div className="new_element_cont">
               <p className="new-element">A HABIT TRACKING APP</p>
+              <a href="https://www.habit-rabbit.xyz/" target="_blank">
+                <Image src={arrow} className="arrow" />
+              </a>
             </div>
           </div>
           <div
@@ -450,12 +453,14 @@ const Navbar = () => {
               <p className="tech">NEXT.JS</p>
             </div>
             <div className="proj_left">
-              <Image className="icon" src={srcMuseum} />
+              <Image className="icon_museum" src={srcMuseum} />
               <p className="title">MUSEUM MEMORY</p>
             </div>
             <div className="new_element_cont">
               <p className="new-element">MUSEUM-THEMED MEMORY GAME</p>
-              <Image src={arrow} className="arrow"/>
+              <a href="https://www.museummatch.org/" target="_blank">
+                <Image src={arrow} className="arrow" />
+              </a>
             </div>
           </div>
         </div>
@@ -475,6 +480,9 @@ const Navbar = () => {
             </div>
             <div className="new_element_cont">
               <p className="new-element">A JAVASCRIPT CALCULATOR</p>
+              <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
+                <Image src={arrow} className="arrow" />
+              </a>
             </div>
           </div>
           <div
@@ -487,13 +495,20 @@ const Navbar = () => {
               <p className="tech">NEXT.JS</p>
             </div>
             <div className="proj_center">
-              <Image className="icon" src={srcArt} />
+              <Image className="icon_art" src={srcArt} />
               <div className="art_title">
                 <p className="title">KRISTE'S</p>
                 <p className="title">ART</p>
               </div>
               <div className="new_element_cont">
                 <p className="new-element">CUSTOM ART PORTFOLIO</p>
+                {/* need to add correct url */}
+                <a
+                  href="https://calculator-ulapkus.vercel.app/"
+                  target="_blank"
+                >
+                  <Image src={arrow} className="arrow" />
+                </a>
               </div>
             </div>
           </div>

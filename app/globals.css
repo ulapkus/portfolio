@@ -255,27 +255,39 @@ h1 {
   color: black;
 }
 
+.my_projects_right:hover .title,
+.my_projects_right:hover .tech {
+  color: black;
+}
+
+.my_projects_right:hover {
+  background-color: #fef7d4;
+}
+
 .new_element_cont {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid blue;
   /* height: 3.5vw; */
   padding: 0 1.3vw 0 1.3vw;
   width: 100%;
 }
 
 .new-element {
-  border: 1px solid blue;
-  color: white;
+  color: black;
   font-family: PixCon;
+  font-size: 0.8vw;
 }
 
 .arrow {
   object-fit: contain;
   height: 2vh;
   width: auto;
+}
+
+.arrow:hover {
+  cursor: pointer;
 }
 
 .tech_container {
@@ -363,7 +375,6 @@ h1 {
   width: 100vw;
   padding: 6% 2% 6% 2%;
   margin: 0;
-  border: 1px solid blue;
 }
 
 .my_projects_left {
@@ -377,10 +388,22 @@ h1 {
   width: auto;
 }
 
+.icon_museum {
+  object-fit: contain;
+  height: 52%;
+  width: auto;
+}
+
 .icon_bunny {
   object-fit: contain;
   height: auto;
-  width: 13%;
+  width: 14%;
+}
+
+.icon_art {
+  object-fit: contain;
+  height: 38%;
+  width: auto;
 }
 
 .icon_resume {
@@ -414,7 +437,6 @@ h1 {
   width: 100%;
   /* padding-bottom: 3.5vw; */
   height: 100%;
-  border: 1px solid blue;
   padding: 0;
   margin: 0;
 }
@@ -636,6 +658,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.9vw;
 }
 
 .footnote_icon {
@@ -646,9 +669,8 @@ h1 {
 
 .footnote_icon_email {
   object-fit: contain;
-  height: 6.5vw;
+  height: 4vw;
   width: auto;
-  margin: 0 0 -1.3vw 0;
 }
 
 .footnote_caption {
