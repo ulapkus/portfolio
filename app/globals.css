@@ -236,42 +236,81 @@ h1 {
 
 .website {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  height: 50%;
+  height: 40vh;
   width: 100%;
   position: relative;
   overflow: hidden;
-  border: 1px solid red;
+  border: 1px solid #fef7d4;
+}
+
+.website:hover {
+  background-color: #fef7d4;
+}
+
+.website:hover .title,
+.website:hover .tech {
+  color: black;
+}
+
+.new_element_cont {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  border: 1px solid blue;
+  /* height: 3.5vw; */
+  padding: 0 1.3vw 0 1.3vw;
+  width: 100%;
+}
+
+.new-element {
+  border: 1px solid blue;
+  color: white;
+  font-family: PixCon;
+}
+
+.arrow {
+  object-fit: contain;
+  height: 2vh;
+  width: auto;
+}
+
+.tech_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5%;
+  width: 90%;
+  height: 3.5vw;
+}
+
+.tech {
+  font-family: PixCon;
+  color: #fef7d4;
+  font-size: 0.7vw;
+}
+
+.resume_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
 }
 
 .resume {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
   overflow: hidden;
-  border: 1px solid red;
+  padding: 5%;
 }
-
-.museum {
-  height: 70vh;
-  width: 50vw;
-  object-fit: cover;
-  overflow: hidden;
-  transition: transform 2.9s ease;
-  opacity: 0.5;
-}
-
-/* .museum:hover {
-  transform: scale(1.2);
-  overflow: hidden;
-  opacity: 1;
-  cursor: pointer;
-} */
 
 .description {
   width: 50vw;
@@ -314,23 +353,13 @@ h1 {
   letter-spacing: 0.5vw;
 }
 
-.tech_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 5%;
-  width: 90%;
-  height: 5vh;
-}
-
 .my_projects {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  height: 100vh;
+  align-items: flex-start;
+  position: relative;
+  height: 100%;
   width: 100vw;
   padding: 6% 2% 6% 2%;
   margin: 0;
@@ -338,36 +367,78 @@ h1 {
 }
 
 .my_projects_left {
-  border: 1px solid blue;
   height: 100%;
   width: 45vw;
 }
 
+.icon {
+  object-fit: contain;
+  height: 45%;
+  width: auto;
+}
+
+.icon_bunny {
+  object-fit: contain;
+  height: auto;
+  width: 13%;
+}
+
+.icon_resume {
+  object-fit: contain;
+  height: 20%;
+  width: auto;
+}
+
 .my_projects_center {
-  border: 1px solid blue;
   height: 100%;
   width: 22vw;
 }
 
-.my_projects_right {
-  border: 1px solid blue;
-  height: 100%;
-  width: 24vw;
-}
-
-.tech {
+.proj_left {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 0.9vw;
-  font-family: monospace;
-  padding: 3%;
-  border: 0.5px solid white;
-  border-radius: 15px;
-  height: 4vh;
-  width: 8vw;
+  gap: 3.5%;
+  width: 100%;
+  padding-bottom: 3.5vw;
+  height: 100%;
+}
+
+.proj_left_bunny {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5%;
+  width: 100%;
+  /* padding-bottom: 3.5vw; */
+  height: 100%;
+  border: 1px solid blue;
+  padding: 0;
+  margin: 0;
+}
+
+.proj_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 4.5%;
+
+  /* padding-bottom: 3.5vw; */
+}
+
+.art_title {
+  text-align: center;
+}
+
+.my_projects_right {
+  height: 80vh;
+  width: 24vw;
+  border: 1px solid #fef7d4;
 }
 
 .overlay {
@@ -406,16 +477,6 @@ h1 {
 .image_text_two {
   margin: 0;
 }
-
-.arrow {
-  object-fit: contain;
-  height: 3vh;
-  width: 3vw;
-}
-
-/* .website:hover .overlay {
-  transform: translateY(0);
-} */
 
 .rabbit_background {
   display: flex;
@@ -551,12 +612,47 @@ h1 {
 }
 
 .footnote {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  height: 50vh;
-  width: 100vw;
   color: white;
-  font-size: 3vh;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+  gap: 10%;
+  height: 30vh;
+  width: 100vw;
+}
+
+.footnote_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4vw;
+}
+
+.footnote_container_email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footnote_icon {
+  object-fit: contain;
+  height: 4.5vw;
+  width: auto;
+}
+
+.footnote_icon_email {
+  object-fit: contain;
+  height: 6.5vw;
+  width: auto;
+  margin: 0 0 -1.3vw 0;
+}
+
+.footnote_caption {
+  color: #fef7d4;
+  font-size: 0.9vw;
+  font-family: PixCon;
 }

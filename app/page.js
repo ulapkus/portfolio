@@ -4,11 +4,11 @@ import React, { useState, useEffect, useRef } from "react";
 // import Link from "next/link";
 import Image from "next/image";
 import wavinghand from "../public/wavinghand.png";
-import memorygame from "../public/memorygame.png";
-import rabbit from "../public/Bunny2.png";
+import museum from "../public/museum.png";
+import bunny from "../public/bunny.png";
 import calculator from "../public/calculator.png";
-import avocado from "../public/avocado.jpg";
-import arrow from "../public/rightarrow.png";
+import resume from "../public/resume.png";
+import art from "../public/art.png";
 import cssimage from "../public/Icon5.png";
 import jsimage from "../public/Icon4.png";
 import reactimage from "../public/Icon3.png";
@@ -16,6 +16,15 @@ import figmaimage from "../public/Icon1.png";
 import uiuximage from "../public/uiux.png";
 import htmlimage from "../public/Icon2.png";
 import temptwo from "../public/OIG3.jpeg";
+import email from "../public/email.png";
+import github from "../public/github.png";
+import linkedin from "../public/linkedin.png";
+import artdark from "../public/art_dark.png";
+import museumdark from "../public/museum_dark.png";
+import calculatordark from "../public/calculator_dark.png";
+import bunnydark from "../public/bunny_dark.png";
+import resumedark from "../public/resumdark.png";
+import arrow from "../public/arrow.png";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -41,6 +50,11 @@ const Navbar = () => {
     { src: temptwo, alt: "Placeholder" },
     { src: temptwo, alt: "Placeholder" },
   ]);
+  const [srcBunny, setSrcBunny] = useState(bunny);
+  const [srcMuseum, setSrcMuseum] = useState(museum);
+  const [srcCalculator, setSrcCalculator] = useState(calculator);
+  const [srcArt, setSrcArt] = useState(art);
+  const [srcResume, setSrcResume] = useState(resume);
 
   const endDrawingPoint = 800;
 
@@ -399,41 +413,122 @@ const Navbar = () => {
             <Image className="temptwoimg skill" src={temptwo} />
             <div className="img_caption">TEMP</div>
           </div>
-
-          {/* {icons.map((icon, index) => (
+        </div>
+      </div>
+      {/* {icons.map((icon, index) => (
             <div key={index} className="skillimg">
               <Image className="skill" src={icon.src} alt={icon.alt} />
             </div>
           ))} */}
-        </div>
-      </div>
       <div className="my_projects">
         <div className="my_projects_left">
-          <div className="website">
-            <p className="title">HABIT RABBIT</p>
+          <div
+            className="website"
+            onMouseEnter={() => setSrcBunny(bunnydark)}
+            onMouseLeave={() => setSrcBunny(bunny)}
+          >
+            <div className="tech_container">
+              <p className="tech">REACT.JS</p>
+              <p className="tech">NEXTAUTH</p>
+              <p className="tech">MONGODB</p>
+            </div>
+            <div className="proj_left_bunny">
+              <Image className="icon_bunny" src={srcBunny} />
+              <p className="title">HABIT RABBIT</p>
+            </div>
+            <div className="new_element_cont">
+              <p className="new-element">A HABIT TRACKING APP</p>
+            </div>
           </div>
-          <div className="website">
-            <p className="title">MUSEUM MEMORY</p>
+          <div
+            className="website"
+            onMouseEnter={() => setSrcMuseum(museumdark)}
+            onMouseLeave={() => setSrcMuseum(museum)}
+          >
+            <div className="tech_container">
+              <p className="tech">REACT.JS</p>
+              <p className="tech">NEXT.JS</p>
+            </div>
+            <div className="proj_left">
+              <Image className="icon" src={srcMuseum} />
+              <p className="title">MUSEUM MEMORY</p>
+            </div>
+            <div className="new_element_cont">
+              <p className="new-element">MUSEUM-THEMED MEMORY GAME</p>
+              <Image src={arrow} className="arrow"/>
+            </div>
           </div>
         </div>
         <div className="my_projects_center">
-          <div className="website">
-            <p className="title">CALCULATOR</p>
+          <div
+            className="website"
+            onMouseEnter={() => setSrcCalculator(calculatordark)}
+            onMouseLeave={() => setSrcCalculator(calculator)}
+          >
+            <div className="tech_container">
+              <p className="tech">REACT.JS</p>
+              <p className="tech">NEXT.JS</p>
+            </div>
+            <div className="proj_center">
+              <Image className="icon" src={srcCalculator} />
+              <p className="title">CALCULATOR</p>
+            </div>
+            <div className="new_element_cont">
+              <p className="new-element">A JAVASCRIPT CALCULATOR</p>
+            </div>
           </div>
-          <div className="website">
-            <p className="title">KRISTES ART</p>
+          <div
+            className="website"
+            onMouseEnter={() => setSrcArt(artdark)}
+            onMouseLeave={() => setSrcArt(art)}
+          >
+            <div className="tech_container">
+              <p className="tech">REACT.JS</p>
+              <p className="tech">NEXT.JS</p>
+            </div>
+            <div className="proj_center">
+              <Image className="icon" src={srcArt} />
+              <div className="art_title">
+                <p className="title">KRISTE'S</p>
+                <p className="title">ART</p>
+              </div>
+              <div className="new_element_cont">
+                <p className="new-element">CUSTOM ART PORTFOLIO</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="my_projects_right">
-          <div className="resume">
-            <p className="title">MY_RESUME</p>
-            <p className="title">.PDF</p>
+        <div
+          className="my_projects_right"
+          onMouseEnter={() => setSrcResume(resumedark)}
+          onMouseLeave={() => setSrcResume(resume)}
+        >
+          <div className="tech_container">
+            <p className="tech">PDF</p>
+          </div>
+          <div className="resume_container">
+            <Image className="icon_resume" src={srcResume} />
+            <div className="resume">
+              <p className="title">MY_RESUME</p>
+              <p className="title">.PDF</p>
+            </div>
           </div>
         </div>
       </div>
-      {/* <div className="footnote">
-     Linked in, etc..
-      </div> */}
+      <div className="footnote">
+        <div className="footnote_container">
+          <Image src={linkedin} className="footnote_icon" />
+          <p className="footnote_caption">LINKEDIN</p>
+        </div>
+        <div className="footnote_container">
+          <Image src={github} className="footnote_icon" />
+          <p className="footnote_caption">GITHUB</p>
+        </div>
+        <div className="footnote_container_email">
+          <Image src={email} className="footnote_icon_email" />
+          <p className="footnote_caption">EMAIL ME</p>
+        </div>
+      </div>
     </div>
   );
 };
