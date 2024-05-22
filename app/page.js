@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-// import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import wavinghand from "../public/wavinghand.png";
 import museum from "../public/museum.png";
@@ -25,6 +25,10 @@ import calculatordark from "../public/calculator_dark.png";
 import bunnydark from "../public/bunny_dark.png";
 import resumedark from "../public/resumdark.png";
 import arrow from "../public/arrow.png";
+import mountains from "../public/mountains.webp";
+import buildings from "../public/buildings.webp";
+import trees from "../public/trees.webp";
+import backgroundimg from "../public/background-smaller.webp";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -40,22 +44,43 @@ const Navbar = () => {
   const [lineLength, setLineLength] = useState(0);
   const [startDrawingPoint, setStartDrawingPoint] = useState(600);
 
-  const [icons, setIcons] = useState([
-    { src: htmlimage, alt: "HTML" },
-    { src: cssimage, alt: "CSS" },
-    { src: jsimage, alt: "JavaScript" },
-    { src: reactimage, alt: "React" },
-    { src: uiuximage, alt: "UI/UX" },
-    { src: figmaimage, alt: "Figma" },
-    { src: temptwo, alt: "Placeholder" },
-    { src: temptwo, alt: "Placeholder" },
-  ]);
+  // const [icons, setIcons] = useState([
+  //   { src: htmlimage, alt: "HTML" },
+  //   { src: cssimage, alt: "CSS" },
+  //   { src: jsimage, alt: "JavaScript" },
+  //   { src: reactimage, alt: "React" },
+  //   { src: uiuximage, alt: "UI/UX" },
+  //   { src: figmaimage, alt: "Figma" },
+  //   { src: temptwo, alt: "Placeholder" },
+  //   { src: temptwo, alt: "Placeholder" },
+  // ]);
+
   const [srcBunny, setSrcBunny] = useState(bunny);
   const [srcMuseum, setSrcMuseum] = useState(museum);
   const [srcCalculator, setSrcCalculator] = useState(calculator);
   const [srcArt, setSrcArt] = useState(art);
   const [srcResume, setSrcResume] = useState(resume);
+  const [isMobile, setIsMobile] = useState(
+    window.matchMedia("(max-width: 768px)").matches
+  );
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const handleMediaChange = (e) => {
+      setIsMobile(e.matches);
+    };
+
+    // Set initial state
+    setIsMobile(mediaQuery.matches);
+
+    // Add listener
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    // Clean up listener on component unmount
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaChange);
+    };
+  }, []);
   const endDrawingPoint = 800;
 
   useEffect(() => {
@@ -93,9 +118,8 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const zoomInThreshold = 800; // Adjust this value to change when zooming starts
-    const maxZoomFactor = 1.3; // Adjust this value to change the maximum zoom level
-
+    const zoomInThreshold = 800;
+    const maxZoomFactor = 1.3;
     let newZoomFactor = 1 + scrollPosition / zoomInThreshold;
     newZoomFactor = Math.min(newZoomFactor, maxZoomFactor);
 
@@ -112,55 +136,8 @@ const Navbar = () => {
   const treesScale = Math.min(1 + scrollPosition / 800, 10);
 
   useEffect(() => {
-    if (scrollPosition >= 0 && scrollPosition < 100) {
-      setElementVisibility({
-        element1: true,
-        element2: false,
-        element3: false,
-        element4: false,
-        element5: false,
-      });
-    } else if (scrollPosition >= 100 && scrollPosition < 499) {
-      setElementVisibility({
-        element1: false,
-        element2: false,
-        element3: false,
-        element4: false,
-        element5: false,
-      });
-    } else if (scrollPosition >= 500 && scrollPosition < 1000) {
-      setElementVisibility({
-        element1: false,
-        element2: true,
-        element3: false,
-        element4: false,
-        element5: false,
-      });
-    } else if (scrollPosition >= 1000 && scrollPosition < 1500) {
-      setElementVisibility({
-        element1: false,
-        element2: true,
-        element3: false,
-        element4: false,
-        element5: false,
-      });
+    if (scrollPosition >= 1000 && scrollPosition < 1500) {
       setShowTint(true);
-    } else if (scrollPosition >= 1500 && scrollPosition < 2000) {
-      setElementVisibility({
-        element1: false,
-        element2: false,
-        element3: false,
-        element4: false,
-        element5: false,
-      });
-    } else {
-      setElementVisibility({
-        element1: false,
-        element2: false,
-        element3: false,
-        element4: false,
-        element5: false,
-      });
     }
   }, [scrollPosition]);
 
@@ -182,46 +159,31 @@ const Navbar = () => {
   return (
     <div className="main">
       <div className="background">
+        <Image className="backgroundimg" src={backgroundimg} />
         <div className="heading_container">
           <h1 className="name_intro">HELLO, MY NAME IS</h1>
           <h1 className="name">ULA LAPKUS</h1>
           <h1 className="name_caption">SELF-TAUGHT FULLSTACK ENGINEER</h1>
           <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
         </div>
-        <img
-          src="https://i.ibb.co/C0w5Zg6/mountains-v2b-copy.png"
+        <Image
+          src={mountains}
           className="mountains"
           style={{
-            height: "180vh",
             transform: `translateY(${mountainsTranslateY}px) scale(${mountainsScale})`,
           }}
         />
-        {/* <div
-          className="mountains"
-          style={{
-            backgroundImage: `url('https://i.ibb.co/C0w5Zg6/mountains-v2b-copy.png')`,
-            backgroundSize: `${zoomFactor * 100}%`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            height: "150vh",
-            transform: `scale(${firstImageScale})`,
-            transition: "transform 0.3s ease",
-            position: "absolute",
-          }}
-        > */}
-        <img
+        <Image
           className="buildings"
-          src="https://i.ibb.co/pjbYR4G/buildings.webp"
+          src={buildings}
           style={{
-            height: "90vh",
             transform: `translateY(${buildingsTranslateY}px) scale(${buildingsScale})`,
           }}
         />
-        <img
+        <Image
           className="trees"
-          src="https://i.ibb.co/pXmhy88/trees.webp"
+          src={trees}
           style={{
-            height: "99vh",
             transform: `translateY(${treesTranslateY}px) scale(${treesScale})`,
           }}
         />
@@ -245,22 +207,6 @@ const Navbar = () => {
       <div className="new_filler">
         <div className="new_filler_child"></div>
       </div>
-      {/* <div className="filler">
-        {lineLength > 0 && (
-          <div
-            style={{
-              width: "100px",
-              height: `${lineLength}px`,
-              backgroundColor: "gray",
-              position: "fixed",
-              top: `${startDrawingPoint}px`,
-              left: "50%",
-              overflow: "hidden",
-              zIndex: "1",
-            }}
-          ></div>
-        )}
-      </div> */}
       <div className="projects">
         <div className="left_element">
           <div className="hello_container">
@@ -287,67 +233,250 @@ const Navbar = () => {
           />
           <p className="pixelart_caption">I'M ULA!</p>
         </div>
-        {/* <div className="projects-container">
-          <div className="website">
-            <Image className="museum" src={memorygame} />
-            <div className="overlay">
-              <div className="image_text">Museum Memory Game</div>
-              <a
-                href="https://www.museummatch.org/"
-                target="_blank"
-                className="image_text_two"
-              >
-                <div className="explore"> EXPLORE </div>
-                <Image className="arrow" src={arrow} />
-              </a>
-            </div>
-          </div>
-          <div className="website rabbit_background">
-            <Image className="rabbit" src={rabbit} />
-            <div className="overlay">
-              <div className="image_text">Habit Rabbit</div>
-              <a
-                href="https://www.habit-rabbit.xyz/"
-                target="_blank"
-                className="image_text_two"
-              >
-                <div className="explore"> EXPLORE </div>
-                <Image className="arrow" src={arrow} />
-              </a>
-            </div>
-          </div>
-          <div className="website">
-            <Image className="museum" src={avocado} />
-            <div className="overlay">
-              <div className="image_text">Art Portfolio</div>
-              <a
-                href="https://www.museummatch.org/"
-                target="_blank"
-                className="image_text_two"
-              >
-                <div className="explore"> EXPLORE </div>
-                <Image className="arrow" src={arrow} />
-              </a>
-            </div>
-          </div>
-          <div className="website">
-            <Image className="museum" src={calculator} />
-            <div className="overlay">
-              <div className="image_text">Calculator</div>
-              <a
-                href="https://calculator-ulapkus.vercel.app/"
-                target="_blank"
-                className="image_text_two"
-              >
-                <div className="explore"> EXPLORE </div>
-                <Image className="arrow" src={arrow} />
-              </a>
-            </div>
-          </div>
-        </div> */}
       </div>
+
+      {/* {icons.map((icon, index) => (
+            <div key={index} className="skillimg">
+              <Image className="skill" src={icon.src} alt={icon.alt} />
+            </div>
+          ))} */}
+
+      {isMobile ? (
+        <div className="my_projects_mobile_container">
+          <div className="my_projects_mobile">
+            <div className="my_projects_left">
+              <div
+                className="website"
+                onMouseEnter={() => setSrcBunny(bunnydark)}
+                onMouseLeave={() => setSrcBunny(bunny)}
+              >
+                <div className="tech_container">
+                  <p className="tech">REACT.JS</p>
+                  <p className="tech">NEXTAUTH</p>
+                  <p className="tech">MONGODB</p>
+                </div>
+                <div className="proj_left_bunny">
+                  <Image className="icon_bunny" src={srcBunny} />
+                  <p className="title">HABIT RABBIT</p>
+                </div>
+                <div className="new_element_cont">
+                  <p className="new-element">A HABIT TRACKING APP</p>
+                  <a href="https://www.habit-rabbit.xyz/" target="_blank">
+                    <Image src={arrow} className="arrow" />
+                  </a>
+                </div>
+              </div>
+              <div
+                className="website"
+                onMouseEnter={() => setSrcMuseum(museumdark)}
+                onMouseLeave={() => setSrcMuseum(museum)}
+              >
+                <div className="tech_container">
+                  <p className="tech">REACT.JS</p>
+                  <p className="tech">NEXT.JS</p>
+                </div>
+                <div className="proj_left">
+                  <Image className="icon_museum" src={srcMuseum} />
+                  <p className="title">MUSEUM MEMORY</p>
+                </div>
+                <div className="new_element_cont">
+                  <p className="new-element">MUSEUM-THEMED MEMORY GAME</p>
+                  <a href="https://www.museummatch.org/" target="_blank">
+                    <Image src={arrow} className="arrow" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="my_projects_center">
+              <div
+                className="website"
+                onMouseEnter={() => setSrcCalculator(calculatordark)}
+                onMouseLeave={() => setSrcCalculator(calculator)}
+              >
+                <div className="tech_container">
+                  <p className="tech">REACT.JS</p>
+                  <p className="tech">NEXT.JS</p>
+                </div>
+                <div className="proj_center">
+                  <Image className="icon" src={srcCalculator} />
+                  <p className="title">CALCULATOR</p>
+                </div>
+                <div className="new_element_cont">
+                  <p className="new-element">A JAVASCRIPT CALCULATOR</p>
+                  <a
+                    href="https://calculator-ulapkus.vercel.app/"
+                    target="_blank"
+                  >
+                    <Image src={arrow} className="arrow" />
+                  </a>
+                </div>
+              </div>
+              <div
+                className="website"
+                onMouseEnter={() => setSrcArt(artdark)}
+                onMouseLeave={() => setSrcArt(art)}
+              >
+                <div className="tech_container">
+                  <p className="tech">REACT.JS</p>
+                  <p className="tech">NEXT.JS</p>
+                </div>
+                <div className="proj_center">
+                  <Image className="icon_art" src={srcArt} />
+                  <div className="art_title">
+                    <p className="title">KRISTE'S</p>
+                    <p className="title">ART</p>
+                  </div>
+                  <div className="new_element_cont">
+                    <p className="new-element">CUSTOM ART PORTFOLIO</p>
+                    {/* need to add correct url */}
+                    <a
+                      href="https://calculator-ulapkus.vercel.app/"
+                      target="_blank"
+                    >
+                      <Image src={arrow} className="arrow" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="my_projects_right"
+            onMouseEnter={() => setSrcResume(resumedark)}
+            onMouseLeave={() => setSrcResume(resume)}
+          >
+            <div className="tech_container">
+              <p className="tech">PDF</p>
+            </div>
+            <Link href="/resume" target="_blank">
+              <div className="resume_container">
+                <Image className="icon_resume" src={srcResume} />
+                <div className="resume">
+                  <p className="title">MY_RESUME</p>
+                  <p className="title">.PDF</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      ) : (
+        <div className="my_projects">
+          <div className="my_projects_left">
+            <div
+              className="website"
+              onMouseEnter={() => setSrcBunny(bunnydark)}
+              onMouseLeave={() => setSrcBunny(bunny)}
+            >
+              <div className="tech_container">
+                <p className="tech">REACT.JS</p>
+                <p className="tech">NEXTAUTH</p>
+                <p className="tech">MONGODB</p>
+              </div>
+              <div className="proj_left_bunny">
+                <Image className="icon_bunny" src={srcBunny} />
+                <p className="title">HABIT RABBIT</p>
+              </div>
+              <div className="new_element_cont">
+                <p className="new-element">A HABIT TRACKING APP</p>
+                <a href="https://www.habit-rabbit.xyz/" target="_blank">
+                  <Image src={arrow} className="arrow" />
+                </a>
+              </div>
+            </div>
+            <div
+              className="website"
+              onMouseEnter={() => setSrcMuseum(museumdark)}
+              onMouseLeave={() => setSrcMuseum(museum)}
+            >
+              <div className="tech_container">
+                <p className="tech">REACT.JS</p>
+                <p className="tech">NEXT.JS</p>
+              </div>
+              <div className="proj_left">
+                <Image className="icon_museum" src={srcMuseum} />
+                <p className="title">MUSEUM MEMORY</p>
+              </div>
+              <div className="new_element_cont">
+                <p className="new-element">MUSEUM-THEMED MEMORY GAME</p>
+                <a href="https://www.museummatch.org/" target="_blank">
+                  <Image src={arrow} className="arrow" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="my_projects_center">
+            <div
+              className="website"
+              onMouseEnter={() => setSrcCalculator(calculatordark)}
+              onMouseLeave={() => setSrcCalculator(calculator)}
+            >
+              <div className="tech_container">
+                <p className="tech">REACT.JS</p>
+                <p className="tech">NEXT.JS</p>
+              </div>
+              <div className="proj_center">
+                <Image className="icon" src={srcCalculator} />
+                <p className="title">CALCULATOR</p>
+              </div>
+              <div className="new_element_cont">
+                <p className="new-element">A JAVASCRIPT CALCULATOR</p>
+                <a
+                  href="https://calculator-ulapkus.vercel.app/"
+                  target="_blank"
+                >
+                  <Image src={arrow} className="arrow" />
+                </a>
+              </div>
+            </div>
+            <div
+              className="website"
+              onMouseEnter={() => setSrcArt(artdark)}
+              onMouseLeave={() => setSrcArt(art)}
+            >
+              <div className="tech_container">
+                <p className="tech">REACT.JS</p>
+                <p className="tech">NEXT.JS</p>
+              </div>
+              <div className="proj_center">
+                <Image className="icon_art" src={srcArt} />
+                <div className="art_title">
+                  <p className="title">KRISTE'S</p>
+                  <p className="title">ART</p>
+                </div>
+                <div className="new_element_cont">
+                  <p className="new-element">CUSTOM ART PORTFOLIO</p>
+                  {/* need to add correct url */}
+                  <a
+                    href="https://calculator-ulapkus.vercel.app/"
+                    target="_blank"
+                  >
+                    <Image src={arrow} className="arrow" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="my_projects_right"
+            onMouseEnter={() => setSrcResume(resumedark)}
+            onMouseLeave={() => setSrcResume(resume)}
+          >
+            <div className="tech_container">
+              <p className="tech">PDF</p>
+            </div>
+            <Link href="/resume" target="_blank">
+              <div className="resume_container">
+                <Image className="icon_resume" src={srcResume} />
+                <div className="resume">
+                  <p className="title">MY_RESUME</p>
+                  <p className="title">.PDF</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      )}
       <div className="skills">
-        <div className="my-skills">MY SKILLS</div>
         <div className="skills-noarrows">
           <div className="skillimg">
             <Image className="htmlimg skill" src={htmlimage} />
@@ -415,130 +544,22 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* {icons.map((icon, index) => (
-            <div key={index} className="skillimg">
-              <Image className="skill" src={icon.src} alt={icon.alt} />
-            </div>
-          ))} */}
-      <div className="my_projects">
-        <div className="my_projects_left">
-          <div
-            className="website"
-            onMouseEnter={() => setSrcBunny(bunnydark)}
-            onMouseLeave={() => setSrcBunny(bunny)}
-          >
-            <div className="tech_container">
-              <p className="tech">REACT.JS</p>
-              <p className="tech">NEXTAUTH</p>
-              <p className="tech">MONGODB</p>
-            </div>
-            <div className="proj_left_bunny">
-              <Image className="icon_bunny" src={srcBunny} />
-              <p className="title">HABIT RABBIT</p>
-            </div>
-            <div className="new_element_cont">
-              <p className="new-element">A HABIT TRACKING APP</p>
-              <a href="https://www.habit-rabbit.xyz/" target="_blank">
-                <Image src={arrow} className="arrow" />
-              </a>
-            </div>
-          </div>
-          <div
-            className="website"
-            onMouseEnter={() => setSrcMuseum(museumdark)}
-            onMouseLeave={() => setSrcMuseum(museum)}
-          >
-            <div className="tech_container">
-              <p className="tech">REACT.JS</p>
-              <p className="tech">NEXT.JS</p>
-            </div>
-            <div className="proj_left">
-              <Image className="icon_museum" src={srcMuseum} />
-              <p className="title">MUSEUM MEMORY</p>
-            </div>
-            <div className="new_element_cont">
-              <p className="new-element">MUSEUM-THEMED MEMORY GAME</p>
-              <a href="https://www.museummatch.org/" target="_blank">
-                <Image src={arrow} className="arrow" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="my_projects_center">
-          <div
-            className="website"
-            onMouseEnter={() => setSrcCalculator(calculatordark)}
-            onMouseLeave={() => setSrcCalculator(calculator)}
-          >
-            <div className="tech_container">
-              <p className="tech">REACT.JS</p>
-              <p className="tech">NEXT.JS</p>
-            </div>
-            <div className="proj_center">
-              <Image className="icon" src={srcCalculator} />
-              <p className="title">CALCULATOR</p>
-            </div>
-            <div className="new_element_cont">
-              <p className="new-element">A JAVASCRIPT CALCULATOR</p>
-              <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
-                <Image src={arrow} className="arrow" />
-              </a>
-            </div>
-          </div>
-          <div
-            className="website"
-            onMouseEnter={() => setSrcArt(artdark)}
-            onMouseLeave={() => setSrcArt(art)}
-          >
-            <div className="tech_container">
-              <p className="tech">REACT.JS</p>
-              <p className="tech">NEXT.JS</p>
-            </div>
-            <div className="proj_center">
-              <Image className="icon_art" src={srcArt} />
-              <div className="art_title">
-                <p className="title">KRISTE'S</p>
-                <p className="title">ART</p>
-              </div>
-              <div className="new_element_cont">
-                <p className="new-element">CUSTOM ART PORTFOLIO</p>
-                {/* need to add correct url */}
-                <a
-                  href="https://calculator-ulapkus.vercel.app/"
-                  target="_blank"
-                >
-                  <Image src={arrow} className="arrow" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="my_projects_right"
-          onMouseEnter={() => setSrcResume(resumedark)}
-          onMouseLeave={() => setSrcResume(resume)}
-        >
-          <div className="tech_container">
-            <p className="tech">PDF</p>
-          </div>
-          <div className="resume_container">
-            <Image className="icon_resume" src={srcResume} />
-            <div className="resume">
-              <p className="title">MY_RESUME</p>
-              <p className="title">.PDF</p>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="footnote">
-        <div className="footnote_container">
-          <Image src={linkedin} className="footnote_icon" />
-          <p className="footnote_caption">LINKEDIN</p>
-        </div>
-        <div className="footnote_container">
-          <Image src={github} className="footnote_icon" />
-          <p className="footnote_caption">GITHUB</p>
-        </div>
+        <a
+          href="https://www.linkedin.com/in/ula-lapkus-8651a22b4/"
+          target="_blank"
+        >
+          <div className="footnote_container">
+            <Image src={linkedin} className="footnote_icon" />
+            <p className="footnote_caption">LINKEDIN</p>
+          </div>
+        </a>
+        <a href="https://github.com/ulapkus" target="_blank">
+          <div className="footnote_container">
+            <Image src={github} className="footnote_icon" />
+            <p className="footnote_caption">GITHUB</p>
+          </div>
+        </a>
         <div className="footnote_container_email">
           <Image src={email} className="footnote_icon_email" />
           <p className="footnote_caption">EMAIL ME</p>
