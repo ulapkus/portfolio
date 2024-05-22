@@ -226,13 +226,24 @@ const Navbar = () => {
             and traveling.
           </p>
         </div>
-        <div className="right_element">
-          <img
-            className="ula_pixelart"
-            src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
-          />
-          <p className="pixelart_caption">I'M ULA!</p>
-        </div>
+
+        {isMobile ? (
+          <div className="right_element_mobile">
+            <img
+              className="ula_pixelart_mobile"
+              src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
+            />
+            <p className="pixelart_caption_mobile">I'M ULA!</p>
+          </div>
+        ) : (
+          <div className="right_element">
+            <img
+              className="ula_pixelart"
+              src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
+            />
+            <p className="pixelart_caption">I'M ULA!</p>
+          </div>
+        )}
       </div>
 
       {/* {icons.map((icon, index) => (
