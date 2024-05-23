@@ -29,6 +29,8 @@ import mountains from "../public/mountains.webp";
 import buildings from "../public/buildings.webp";
 import trees from "../public/trees.webp";
 import backgroundimg from "../public/background-smaller.webp";
+import buildingsmobile from "../public/buildings v2.webp";
+import treesmobile from "../public/trees v2.webp";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -126,14 +128,23 @@ const Navbar = () => {
     setZoomFactor(newZoomFactor);
   }, [scrollPosition]);
 
-  const mountainsTranslateY = Math.max(0, scrollPosition * 0.5);
+  const mountainsY = Math.max(0, scrollPosition * 0.5);
   const mountainsScale = Math.min(1 + scrollPosition / 3000, 8);
 
-  const buildingsTranslateY = Math.max(0, scrollPosition * 0.4);
+  const buildingsY = Math.max(0, scrollPosition * 0.4);
   const buildingsScale = Math.min(1 + scrollPosition / 800, 8);
 
-  const treesTranslateY = Math.max(0, scrollPosition * 0.15);
+  const treesY = Math.max(0, scrollPosition * 0.15);
   const treesScale = Math.min(1 + scrollPosition / 800, 10);
+
+  const mountainsYMobile = Math.max(0, scrollPosition * 0.15);
+  const mountainsScaleMobile = Math.min(1 + scrollPosition / 2000, 8);
+
+  const buildingsYMobile = Math.max(0, scrollPosition * 0.5);
+  const buildingsScaleMobile = Math.min(1 + scrollPosition / 800, 8);
+
+  const treesYMobile = Math.max(0, scrollPosition * 0.65);
+  const treesScaleMobile = Math.min(1 + scrollPosition / 800, 10);
 
   useEffect(() => {
     if (scrollPosition >= 1000 && scrollPosition < 1500) {
@@ -158,103 +169,380 @@ const Navbar = () => {
 
   return (
     <div className="main">
-      <div className="background">
-        <Image className="backgroundimg" src={backgroundimg} />
-        <div className="heading_container">
-          <h1 className="name_intro">HELLO, MY NAME IS</h1>
-          <h1 className="name">ULA LAPKUS</h1>
-          <h1 className="name_caption">SELF-TAUGHT FULLSTACK ENGINEER</h1>
-          <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
-        </div>
-        <Image
-          src={mountains}
-          className="mountains"
-          style={{
-            transform: `translateY(${mountainsTranslateY}px) scale(${mountainsScale})`,
-          }}
-        />
-        <Image
-          className="buildings"
-          src={buildings}
-          style={{
-            transform: `translateY(${buildingsTranslateY}px) scale(${buildingsScale})`,
-          }}
-        />
-        <Image
-          className="trees"
-          src={trees}
-          style={{
-            transform: `translateY(${treesTranslateY}px) scale(${treesScale})`,
-          }}
-        />
-
-        {showTint && (
-          <div
-            className="dark-tint"
-            style={{
-              backgroundColor: `rgba(0, 0, 0, ${darkness})`,
-              height: "100vh",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 1,
-            }}
-          />
-        )}
-      </div>
-      <div className="new_filler">
-        <div className="new_filler_child"></div>
-      </div>
-      <div className="projects">
-        <div className="left_element">
-          <div className="hello_container">
-            <p className="hello">HELLO</p>
-            <p className="hello_two">
-              WORLD <Image className="wavinghand" src={wavinghand} />
-            </p>
-          </div>
-          <p className="hello_description">
-            I'm a full-stack developer using JavaScript and React to turn pixels
-            on a screen into full-fledged user experiences. I’m passionate about
-            leveraging the ever-evolving tech landscape to create human
-            solutions that surprise & delight.
-          </p>
-          <p className="hello_description">
-            Beyond the screen, you'll find me hiking, listening to audiobooks,
-            and traveling.
-          </p>
-        </div>
-
-        {isMobile ? (
-          <div className="right_element_mobile">
-            <img
-              className="ula_pixelart_mobile"
-              src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
-            />
-            <p className="pixelart_caption_mobile">I'M ULA!</p>
-          </div>
-        ) : (
-          <div className="right_element">
-            <img
-              className="ula_pixelart"
-              src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
-            />
-            <p className="pixelart_caption">I'M ULA!</p>
-          </div>
-        )}
-      </div>
-
-      {/* {icons.map((icon, index) => (
-            <div key={index} className="skillimg">
-              <Image className="skill" src={icon.src} alt={icon.alt} />
-            </div>
-          ))} */}
-
       {isMobile ? (
-        <div className="my_projects_mobile_container">
-          <div className="my_projects_mobile">
+        <div>
+          <div className="background">
+            <Image className="backgroundimg" src={backgroundimg} />
+            <div className="heading_container_mobile">
+              <h1 className="name_intro_mobile">HELLO, MY NAME IS</h1>
+              <h1 className="name_mobile">ULA LAPKUS</h1>
+              <h1 className="name_caption_mobile">
+                SELF-TAUGHT FULLSTACK ENGINEER
+              </h1>
+              <h1 className="name_caption_mobile">IN SALT LAKE CITY, UT</h1>
+            </div>
+            <Image
+              src={mountains}
+              className="mountains_mobile"
+              style={{
+                transform: `translateY(${mountainsYMobile}px) scale(${mountainsScaleMobile})`,
+              }}
+            />
+            <Image
+              className="buildings_mobile"
+              src={buildingsmobile}
+              style={{
+                transform: `translateY(${buildingsYMobile}px) scale(${buildingsScaleMobile})`,
+              }}
+            />
+            <Image
+              className="trees_mobile"
+              src={treesmobile}
+              style={{
+                transform: `translateY(${treesYMobile}px) scale(${treesScaleMobile})`,
+              }}
+            />
+
+            {showTint && (
+              <div
+                className="dark-tint"
+                style={{
+                  backgroundColor: `rgba(0, 0, 0, ${darkness})`,
+                  height: "200vh",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  zIndex: 1,
+                }}
+              />
+            )}
+          </div>
+          <div className="new_filler">
+            <div className="new_filler_child"></div>
+          </div>
+          <div className="projects_mobile">
+            <div className="right_element_mobile">
+              <img
+                className="ula_pixelart_mobile"
+                src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
+              />
+              <p className="pixelart_caption_mobile">I'M ULA!</p>
+            </div>
+            <div className="left_element_mobile">
+              <div className="hello_container_mobile">
+                <div>
+                  <p className="hello_mobile">HELLO</p>
+                  <p className="hello_two_mobile">WORLD</p>
+                </div>
+                <Image className="wavinghand_mobile" src={wavinghand} />
+              </div>
+              <p className="hello_description_mobile">
+                I'm a full-stack developer using JavaScript and React to turn
+                pixels on a screen into full-fledged user experiences. I’m
+                passionate about leveraging the ever-evolving tech landscape to
+                create human solutions that surprise & delight.
+              </p>
+              <p className="hello_description_mobile">
+                Beyond the screen, you'll find me hiking, listening to
+                audiobooks, and traveling.
+              </p>
+            </div>
+          </div>
+          <div className="my_projects_mobile_container">
+            <div className="my_projects_mobile">
+              <div className="my_projects_left_mobile">
+                <div
+                  className="website_mobile"
+                  onMouseEnter={() => setSrcBunny(bunnydark)}
+                  onMouseLeave={() => setSrcBunny(bunny)}
+                >
+                  <div className="tech_container">
+                    <p className="tech_mobile">REACT.JS</p>
+                    <p className="tech_mobile">NEXTAUTH</p>
+                    <p className="tech_mobile">MONGODB</p>
+                  </div>
+                  <div className="proj_left_bunny_mobile">
+                    <Image className="icon_bunny_mobile" src={srcBunny} />
+                    <p className="title_mobile">HABIT RABBIT</p>
+                  </div>
+                  <div className="new_element_cont">
+                    <p className="new_element_mobile">A HABIT TRACKING APP</p>
+                    <a href="https://www.habit-rabbit.xyz/" target="_blank">
+                      <Image src={arrow} className="arrow" />
+                    </a>
+                  </div>
+                </div>
+                <div
+                  className="website_mobile"
+                  onMouseEnter={() => setSrcMuseum(museumdark)}
+                  onMouseLeave={() => setSrcMuseum(museum)}
+                >
+                  <div className="tech_container">
+                    <p className="tech_mobile">REACT.JS</p>
+                    <p className="tech_mobile">NEXT.JS</p>
+                  </div>
+                  <div className="proj_left_mobile">
+                    <Image className="icon_museum_mobile" src={srcMuseum} />
+                    <p className="title_mobile">MUSEUM MEMORY</p>
+                  </div>
+                  <div className="new_element_cont">
+                    <p className="new_element_mobile">
+                      MUSEUM-THEMED MEMORY GAME
+                    </p>
+                    <a href="https://www.museummatch.org/" target="_blank">
+                      <Image src={arrow} className="arrow" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="my_projects_center_mobile">
+                <div
+                  className="website_mobile"
+                  onMouseEnter={() => setSrcCalculator(calculatordark)}
+                  onMouseLeave={() => setSrcCalculator(calculator)}
+                >
+                  <div className="tech_container">
+                    <p className="tech_mobile">REACT.JS</p>
+                    <p className="tech_mobile">NEXT.JS</p>
+                  </div>
+                  <div className="proj_center_mobile">
+                    <Image
+                      className="icon_calculator_mobile"
+                      src={srcCalculator}
+                    />
+                    <p className="title_mobile">CALCULATOR</p>
+                  </div>
+                  <div className="new_element_cont">
+                    <p className="new_element_mobile">
+                      A JAVASCRIPT CALCULATOR
+                    </p>
+                    <a
+                      href="https://calculator-ulapkus.vercel.app/"
+                      target="_blank"
+                    >
+                      <Image src={arrow} className="arrow" />
+                    </a>
+                  </div>
+                </div>
+                <div
+                  className="website_mobile"
+                  onMouseEnter={() => setSrcArt(artdark)}
+                  onMouseLeave={() => setSrcArt(art)}
+                >
+                  <div className="tech_container">
+                    <p className="tech_mobile">REACT.JS</p>
+                    <p className="tech_mobile">NEXT.JS</p>
+                  </div>
+                  <div className="proj_center_mobile">
+                    <Image className="icon_art_mobile" src={srcArt} />
+                    <div className="art_title">
+                      <p className="title_mobile">KRISTE'S</p>
+                      <p className="title_mobile">ART</p>
+                    </div>
+                  </div>{" "}
+                  <div className="new_element_cont">
+                    <p className="new_element_mobile">CUSTOM ART PORTFOLIO</p>
+                    {/* need to add correct url */}
+                    <a
+                      href="https://calculator-ulapkus.vercel.app/"
+                      target="_blank"
+                    >
+                      <Image src={arrow} className="arrow" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="my_projects_right_mobile"
+              onMouseEnter={() => setSrcResume(resumedark)}
+              onMouseLeave={() => setSrcResume(resume)}
+            >
+              <div className="tech_container">
+                <p className="tech_mobile">PDF</p>
+              </div>
+              <Link href="/resume" target="_blank">
+                <div className="resume_container">
+                  <Image className="icon_resume" src={srcResume} />
+                  <div className="resume">
+                    <p className="title_mobile">MY_RESUME</p>
+                    <p className="title_mobile">.PDF</p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+          <div className="skills">
+            <div className="skills-noarrows">
+              <div className="skillimg_mobile">
+                <Image className="htmlimg skill" src={htmlimage} />
+                <div className="img_caption">HTML</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="cssimg skill" src={cssimage} />
+                <div className="img_caption">CSS</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="jsimg skill" src={jsimage} />
+                <div className="img_caption">JAVASCRIPT</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="reactimg skill" src={reactimage} />
+                <div className="img_caption">REACT.JS</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="uiuximg skill" src={uiuximage} />
+                <div className="img_caption">UI/UX</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="figmaimg skill" src={figmaimage} />
+                <div className="img_caption">FIGMA</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="tempimg skill" src={temptwo} />
+                <div className="img_caption">TEMP</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="temptwoimg skill" src={temptwo} />
+                <div className="img_caption">TEMP</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="htmlimg skill" src={htmlimage} />
+                <div className="img_caption">HTML</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="cssimg skill" src={cssimage} />
+                <div className="img_caption">CSS</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="jsimg skill" src={jsimage} />
+                <div className="img_caption">JAVASCRIPT</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="reactimg skill" src={reactimage} />
+                <div className="img_caption">REACT.JS</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="uiuximg skill" src={uiuximage} />
+                <div className="img_caption">UI/UX</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="figmaimg skill" src={figmaimage} />
+                <div className="img_caption">FIGMA</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="tempimg skill" src={temptwo} />
+                <div className="img_caption">TEMP</div>
+              </div>
+              <div className="skillimg_mobile">
+                <Image className="temptwoimg skill" src={temptwo} />
+                <div className="img_caption">TEMP</div>
+              </div>
+            </div>
+          </div>
+          <div className="footnote_mobile">
+            <a
+              href="https://www.linkedin.com/in/ula-lapkus-8651a22b4/"
+              target="_blank"
+            >
+              <div className="footnote_container_mobile">
+                <Image src={linkedin} className="footnote_icon_mobile" />
+                <p className="footnote_caption_mobile">LINKEDIN</p>
+              </div>
+            </a>
+            <a href="https://github.com/ulapkus" target="_blank">
+              <div className="footnote_container_mobile">
+                <Image src={github} className="footnote_icon_mobile" />
+                <p className="footnote_caption_mobile">GITHUB</p>
+              </div>
+            </a>
+            <div className="footnote_container_email_mobile">
+              <Image src={email} className="footnote_icon_email_mobile" />
+              <p className="footnote_caption_mobile">EMAIL ME</p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div className="background">
+            <Image className="backgroundimg" src={backgroundimg} />
+            <div className="heading_container">
+              <h1 className="name_intro">HELLO, MY NAME IS</h1>
+              <h1 className="name">ULA LAPKUS</h1>
+              <h1 className="name_caption">SELF-TAUGHT FULLSTACK ENGINEER</h1>
+              <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
+            </div>
+            <Image
+              src={mountains}
+              className="mountains"
+              style={{
+                transform: `translateY(${mountainsY}px) scale(${mountainsScale})`,
+              }}
+            />
+            <Image
+              className="buildings"
+              src={buildings}
+              style={{
+                transform: `translateY(${buildingsY}px) scale(${buildingsScale})`,
+              }}
+            />
+            <Image
+              className="trees"
+              src={trees}
+              style={{
+                transform: `translateY(${treesY}px) scale(${treesScale})`,
+              }}
+            />
+
+            {showTint && (
+              <div
+                className="dark-tint"
+                style={{
+                  backgroundColor: `rgba(0, 0, 0, ${darkness})`,
+                  height: "100vh",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  zIndex: 1,
+                }}
+              />
+            )}
+          </div>
+          <div className="new_filler">
+            <div className="new_filler_child"></div>
+          </div>
+          <div className="projects">
+            <div className="left_element">
+              <div className="hello_container">
+                <p className="hello">HELLO</p>
+                <p className="hello_two">
+                  WORLD <Image className="wavinghand" src={wavinghand} />
+                </p>
+              </div>
+              <p className="hello_description">
+                I'm a full-stack developer using JavaScript and React to turn
+                pixels on a screen into full-fledged user experiences. I’m
+                passionate about leveraging the ever-evolving tech landscape to
+                create human solutions that surprise & delight.
+              </p>
+              <p className="hello_description">
+                Beyond the screen, you'll find me hiking, listening to
+                audiobooks, and traveling.
+              </p>
+            </div>
+            <div className="right_element">
+              <img
+                className="ula_pixelart"
+                src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
+              />
+              <p className="pixelart_caption">I'M ULA!</p>
+            </div>{" "}
+          </div>
+          <div className="my_projects">
             <div className="my_projects_left">
               <div
                 className="website"
@@ -271,7 +559,7 @@ const Navbar = () => {
                   <p className="title">HABIT RABBIT</p>
                 </div>
                 <div className="new_element_cont">
-                  <p className="new-element">A HABIT TRACKING APP</p>
+                  <p className="new_element">A HABIT TRACKING APP</p>
                   <a href="https://www.habit-rabbit.xyz/" target="_blank">
                     <Image src={arrow} className="arrow" />
                   </a>
@@ -291,7 +579,7 @@ const Navbar = () => {
                   <p className="title">MUSEUM MEMORY</p>
                 </div>
                 <div className="new_element_cont">
-                  <p className="new-element">MUSEUM-THEMED MEMORY GAME</p>
+                  <p className="new_element">MUSEUM-THEMED MEMORY GAME</p>
                   <a href="https://www.museummatch.org/" target="_blank">
                     <Image src={arrow} className="arrow" />
                   </a>
@@ -313,7 +601,7 @@ const Navbar = () => {
                   <p className="title">CALCULATOR</p>
                 </div>
                 <div className="new_element_cont">
-                  <p className="new-element">A JAVASCRIPT CALCULATOR</p>
+                  <p className="new_element">A JAVASCRIPT CALCULATOR</p>
                   <a
                     href="https://calculator-ulapkus.vercel.app/"
                     target="_blank"
@@ -338,7 +626,7 @@ const Navbar = () => {
                     <p className="title">ART</p>
                   </div>
                   <div className="new_element_cont">
-                    <p className="new-element">CUSTOM ART PORTFOLIO</p>
+                    <p className="new_element">CUSTOM ART PORTFOLIO</p>
                     {/* need to add correct url */}
                     <a
                       href="https://calculator-ulapkus.vercel.app/"
@@ -350,232 +638,122 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className="my_projects_right"
-            onMouseEnter={() => setSrcResume(resumedark)}
-            onMouseLeave={() => setSrcResume(resume)}
-          >
-            <div className="tech_container">
-              <p className="tech">PDF</p>
-            </div>
-            <Link href="/resume" target="_blank">
-              <div className="resume_container">
-                <Image className="icon_resume" src={srcResume} />
-                <div className="resume">
-                  <p className="title">MY_RESUME</p>
-                  <p className="title">.PDF</p>
+            <div
+              className="my_projects_right"
+              onMouseEnter={() => setSrcResume(resumedark)}
+              onMouseLeave={() => setSrcResume(resume)}
+            >
+              <div className="tech_container">
+                <p className="tech">PDF</p>
+              </div>
+              <Link href="/resume" target="_blank">
+                <div className="resume_container">
+                  <Image className="icon_resume" src={srcResume} />
+                  <div className="resume">
+                    <p className="title">MY_RESUME</p>
+                    <p className="title">.PDF</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      ) : (
-        <div className="my_projects">
-          <div className="my_projects_left">
-            <div
-              className="website"
-              onMouseEnter={() => setSrcBunny(bunnydark)}
-              onMouseLeave={() => setSrcBunny(bunny)}
-            >
-              <div className="tech_container">
-                <p className="tech">REACT.JS</p>
-                <p className="tech">NEXTAUTH</p>
-                <p className="tech">MONGODB</p>
-              </div>
-              <div className="proj_left_bunny">
-                <Image className="icon_bunny" src={srcBunny} />
-                <p className="title">HABIT RABBIT</p>
-              </div>
-              <div className="new_element_cont">
-                <p className="new-element">A HABIT TRACKING APP</p>
-                <a href="https://www.habit-rabbit.xyz/" target="_blank">
-                  <Image src={arrow} className="arrow" />
-                </a>
-              </div>
-            </div>
-            <div
-              className="website"
-              onMouseEnter={() => setSrcMuseum(museumdark)}
-              onMouseLeave={() => setSrcMuseum(museum)}
-            >
-              <div className="tech_container">
-                <p className="tech">REACT.JS</p>
-                <p className="tech">NEXT.JS</p>
-              </div>
-              <div className="proj_left">
-                <Image className="icon_museum" src={srcMuseum} />
-                <p className="title">MUSEUM MEMORY</p>
-              </div>
-              <div className="new_element_cont">
-                <p className="new-element">MUSEUM-THEMED MEMORY GAME</p>
-                <a href="https://www.museummatch.org/" target="_blank">
-                  <Image src={arrow} className="arrow" />
-                </a>
-              </div>
+              </Link>
             </div>
           </div>
-          <div className="my_projects_center">
-            <div
-              className="website"
-              onMouseEnter={() => setSrcCalculator(calculatordark)}
-              onMouseLeave={() => setSrcCalculator(calculator)}
-            >
-              <div className="tech_container">
-                <p className="tech">REACT.JS</p>
-                <p className="tech">NEXT.JS</p>
+          <div className="skills">
+            <div className="skills-noarrows">
+              <div className="skillimg">
+                <Image className="htmlimg skill" src={htmlimage} />
+                <div className="img_caption">HTML</div>
               </div>
-              <div className="proj_center">
-                <Image className="icon" src={srcCalculator} />
-                <p className="title">CALCULATOR</p>
+              <div className="skillimg">
+                <Image className="cssimg skill" src={cssimage} />
+                <div className="img_caption">CSS</div>
               </div>
-              <div className="new_element_cont">
-                <p className="new-element">A JAVASCRIPT CALCULATOR</p>
-                <a
-                  href="https://calculator-ulapkus.vercel.app/"
-                  target="_blank"
-                >
-                  <Image src={arrow} className="arrow" />
-                </a>
+              <div className="skillimg">
+                <Image className="jsimg skill" src={jsimage} />
+                <div className="img_caption">JAVASCRIPT</div>
               </div>
-            </div>
-            <div
-              className="website"
-              onMouseEnter={() => setSrcArt(artdark)}
-              onMouseLeave={() => setSrcArt(art)}
-            >
-              <div className="tech_container">
-                <p className="tech">REACT.JS</p>
-                <p className="tech">NEXT.JS</p>
+              <div className="skillimg">
+                <Image className="reactimg skill" src={reactimage} />
+                <div className="img_caption">REACT.JS</div>
               </div>
-              <div className="proj_center">
-                <Image className="icon_art" src={srcArt} />
-                <div className="art_title">
-                  <p className="title">KRISTE'S</p>
-                  <p className="title">ART</p>
-                </div>
-                <div className="new_element_cont">
-                  <p className="new-element">CUSTOM ART PORTFOLIO</p>
-                  {/* need to add correct url */}
-                  <a
-                    href="https://calculator-ulapkus.vercel.app/"
-                    target="_blank"
-                  >
-                    <Image src={arrow} className="arrow" />
-                  </a>
-                </div>
+              <div className="skillimg">
+                <Image className="uiuximg skill" src={uiuximage} />
+                <div className="img_caption">UI/UX</div>
+              </div>
+              <div className="skillimg">
+                <Image className="figmaimg skill" src={figmaimage} />
+                <div className="img_caption">FIGMA</div>
+              </div>
+              <div className="skillimg">
+                <Image className="tempimg skill" src={temptwo} />
+                <div className="img_caption">TEMP</div>
+              </div>
+              <div className="skillimg">
+                <Image className="temptwoimg skill" src={temptwo} />
+                <div className="img_caption">TEMP</div>
+              </div>
+              <div className="skillimg">
+                <Image className="htmlimg skill" src={htmlimage} />
+                <div className="img_caption">HTML</div>
+              </div>
+              <div className="skillimg">
+                <Image className="cssimg skill" src={cssimage} />
+                <div className="img_caption">CSS</div>
+              </div>
+              <div className="skillimg">
+                <Image className="jsimg skill" src={jsimage} />
+                <div className="img_caption">JAVASCRIPT</div>
+              </div>
+              <div className="skillimg">
+                <Image className="reactimg skill" src={reactimage} />
+                <div className="img_caption">REACT.JS</div>
+              </div>
+              <div className="skillimg">
+                <Image className="uiuximg skill" src={uiuximage} />
+                <div className="img_caption">UI/UX</div>
+              </div>
+              <div className="skillimg">
+                <Image className="figmaimg skill" src={figmaimage} />
+                <div className="img_caption">FIGMA</div>
+              </div>
+              <div className="skillimg">
+                <Image className="tempimg skill" src={temptwo} />
+                <div className="img_caption">TEMP</div>
+              </div>
+              <div className="skillimg">
+                <Image className="temptwoimg skill" src={temptwo} />
+                <div className="img_caption">TEMP</div>
               </div>
             </div>
           </div>
-          <div
-            className="my_projects_right"
-            onMouseEnter={() => setSrcResume(resumedark)}
-            onMouseLeave={() => setSrcResume(resume)}
-          >
-            <div className="tech_container">
-              <p className="tech">PDF</p>
-            </div>
-            <Link href="/resume" target="_blank">
-              <div className="resume_container">
-                <Image className="icon_resume" src={srcResume} />
-                <div className="resume">
-                  <p className="title">MY_RESUME</p>
-                  <p className="title">.PDF</p>
-                </div>
+          <div className="footnote">
+            <a
+              href="https://www.linkedin.com/in/ula-lapkus-8651a22b4/"
+              target="_blank"
+            >
+              <div className="footnote_container">
+                <Image src={linkedin} className="footnote_icon" />
+                <p className="footnote_caption">LINKEDIN</p>
               </div>
-            </Link>
+            </a>
+            <a href="https://github.com/ulapkus" target="_blank">
+              <div className="footnote_container">
+                <Image src={github} className="footnote_icon" />
+                <p className="footnote_caption">GITHUB</p>
+              </div>
+            </a>
+            <div className="footnote_container_email">
+              <Image src={email} className="footnote_icon_email" />
+              <p className="footnote_caption">EMAIL ME</p>
+            </div>
           </div>
         </div>
       )}
-      <div className="skills">
-        <div className="skills-noarrows">
-          <div className="skillimg">
-            <Image className="htmlimg skill" src={htmlimage} />
-            <div className="img_caption">HTML</div>
-          </div>
-          <div className="skillimg">
-            <Image className="cssimg skill" src={cssimage} />
-            <div className="img_caption">CSS</div>
-          </div>
-          <div className="skillimg">
-            <Image className="jsimg skill" src={jsimage} />
-            <div className="img_caption">JAVASCRIPT</div>
-          </div>
-          <div className="skillimg">
-            <Image className="reactimg skill" src={reactimage} />
-            <div className="img_caption">REACT.JS</div>
-          </div>
-          <div className="skillimg">
-            <Image className="uiuximg skill" src={uiuximage} />
-            <div className="img_caption">UI/UX</div>
-          </div>
-          <div className="skillimg">
-            <Image className="figmaimg skill" src={figmaimage} />
-            <div className="img_caption">FIGMA</div>
-          </div>
-          <div className="skillimg">
-            <Image className="tempimg skill" src={temptwo} />
-            <div className="img_caption">TEMP</div>
-          </div>
-          <div className="skillimg">
-            <Image className="temptwoimg skill" src={temptwo} />
-            <div className="img_caption">TEMP</div>
-          </div>
-          <div className="skillimg">
-            <Image className="htmlimg skill" src={htmlimage} />
-            <div className="img_caption">HTML</div>
-          </div>
-          <div className="skillimg">
-            <Image className="cssimg skill" src={cssimage} />
-            <div className="img_caption">CSS</div>
-          </div>
-          <div className="skillimg">
-            <Image className="jsimg skill" src={jsimage} />
-            <div className="img_caption">JAVASCRIPT</div>
-          </div>
-          <div className="skillimg">
-            <Image className="reactimg skill" src={reactimage} />
-            <div className="img_caption">REACT.JS</div>
-          </div>
-          <div className="skillimg">
-            <Image className="uiuximg skill" src={uiuximage} />
-            <div className="img_caption">UI/UX</div>
-          </div>
-          <div className="skillimg">
-            <Image className="figmaimg skill" src={figmaimage} />
-            <div className="img_caption">FIGMA</div>
-          </div>
-          <div className="skillimg">
-            <Image className="tempimg skill" src={temptwo} />
-            <div className="img_caption">TEMP</div>
-          </div>
-          <div className="skillimg">
-            <Image className="temptwoimg skill" src={temptwo} />
-            <div className="img_caption">TEMP</div>
-          </div>
-        </div>
-      </div>
-      <div className="footnote">
-        <a
-          href="https://www.linkedin.com/in/ula-lapkus-8651a22b4/"
-          target="_blank"
-        >
-          <div className="footnote_container">
-            <Image src={linkedin} className="footnote_icon" />
-            <p className="footnote_caption">LINKEDIN</p>
-          </div>
-        </a>
-        <a href="https://github.com/ulapkus" target="_blank">
-          <div className="footnote_container">
-            <Image src={github} className="footnote_icon" />
-            <p className="footnote_caption">GITHUB</p>
-          </div>
-        </a>
-        <div className="footnote_container_email">
-          <Image src={email} className="footnote_icon_email" />
-          <p className="footnote_caption">EMAIL ME</p>
-        </div>
-      </div>
+
+      {/* {icons.map((icon, index) => (
+            <div key={index} className="skillimg">
+              <Image className="skill" src={icon.src} alt={icon.alt} />
+            </div>
+          ))} */}
     </div>
   );
 };
