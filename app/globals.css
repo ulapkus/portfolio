@@ -124,7 +124,7 @@ h1 {
   padding-bottom: 15px;
 }
 
-.new_filler {
+.filler {
   transition: opacity 1s;
   top: 0;
   left: 25%;
@@ -134,7 +134,7 @@ h1 {
   height: 250vh;
 }
 
-.new_filler_child {
+.filler_child {
   display: flex;
   flex-direction: row;
   justify-content: center;

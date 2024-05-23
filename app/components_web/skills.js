@@ -8,6 +8,25 @@ import htmlimage from "../../public/Icon2.png";
 import temptwo from "../../public/OIG3.jpeg";
 import Image from "next/image";
 
+// const [icons, setIcons] = useState([
+//   { src: htmlimage, alt: "HTML" },
+//   { src: cssimage, alt: "CSS" },
+//   { src: jsimage, alt: "JavaScript" },
+//   { src: reactimage, alt: "React" },
+//   { src: uiuximage, alt: "UI/UX" },
+//   { src: figmaimage, alt: "Figma" },
+//   { src: temptwo, alt: "Placeholder" },
+//   { src: temptwo, alt: "Placeholder" },
+// ]);
+
+{
+  /* {icons.map((icon, index) => (
+            <div key={index} className="skillimg">
+              <Image className="skill" src={icon.src} alt={icon.alt} />
+            </div>
+          ))} */
+}
+
 export default function Skills() {
   return (
     <div className="skills">
