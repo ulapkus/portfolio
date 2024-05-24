@@ -28,16 +28,16 @@ export default function Projectsmobile() {
             onMouseEnter={() => setSrcBunny(bunnydark)}
             onMouseLeave={() => setSrcBunny(bunny)}
           >
-            <div className="tech_container">
+            <div className="tech_container_mobile">
               <p className="tech_mobile">REACT.JS</p>
               <p className="tech_mobile">NEXTAUTH</p>
               <p className="tech_mobile">MONGODB</p>
             </div>
             <div className="proj_left_bunny_mobile">
               <Image className="icon_bunny_mobile" src={srcBunny} />
-              <p className="title_mobile">HABIT RABBIT</p>
             </div>
-            <div className="new_element_cont">
+            <p className="title_mobile">HABIT RABBIT</p>
+            <div className="new_element_cont_mobile">
               <p className="new_element_mobile">A HABIT TRACKING APP</p>
               <a href="https://www.habit-rabbit.xyz/" target="_blank">
                 <Image src={arrow} className="arrow" />
@@ -49,15 +49,15 @@ export default function Projectsmobile() {
             onMouseEnter={() => setSrcMuseum(museumdark)}
             onMouseLeave={() => setSrcMuseum(museum)}
           >
-            <div className="tech_container">
+            <div className="tech_container_mobile">
               <p className="tech_mobile">REACT.JS</p>
               <p className="tech_mobile">NEXT.JS</p>
             </div>
             <div className="proj_left_mobile">
               <Image className="icon_museum_mobile" src={srcMuseum} />
-              <p className="title_mobile">MUSEUM MEMORY</p>
-            </div>
-            <div className="new_element_cont">
+            </div>{" "}
+            <p className="title_mobile">MUSEUM MEMORY</p>
+            <div className="new_element_cont_mobile">
               <p className="new_element_mobile">MUSEUM-THEMED MEMORY GAME</p>
               <a href="https://www.museummatch.org/" target="_blank">
                 <Image src={arrow} className="arrow" />
@@ -71,15 +71,15 @@ export default function Projectsmobile() {
             onMouseEnter={() => setSrcCalculator(calculatordark)}
             onMouseLeave={() => setSrcCalculator(calculator)}
           >
-            <div className="tech_container">
+            <div className="tech_container_mobile">
               <p className="tech_mobile">REACT.JS</p>
               <p className="tech_mobile">NEXT.JS</p>
             </div>
             <div className="proj_center_mobile">
               <Image className="icon_calculator_mobile" src={srcCalculator} />
-              <p className="title_mobile">CALCULATOR</p>
-            </div>
-            <div className="new_element_cont">
+            </div>{" "}
+            <p className="title_mobile">CALCULATOR</p>
+            <div className="new_element_cont_mobile">
               <p className="new_element_mobile">A JAVASCRIPT CALCULATOR</p>
               <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
                 <Image src={arrow} className="arrow" />
@@ -91,18 +91,18 @@ export default function Projectsmobile() {
             onMouseEnter={() => setSrcArt(artdark)}
             onMouseLeave={() => setSrcArt(art)}
           >
-            <div className="tech_container">
+            <div className="tech_container_mobile">
               <p className="tech_mobile">REACT.JS</p>
               <p className="tech_mobile">NEXT.JS</p>
             </div>
             <div className="proj_center_mobile">
               <Image className="icon_art_mobile" src={srcArt} />
-              <div className="art_title">
-                <p className="title_mobile">KRISTE'S</p>
-                <p className="title_mobile">ART</p>
-              </div>
-            </div>{" "}
-            <div className="new_element_cont">
+            </div>
+            <div className="art_title">
+              <p className="title_mobile_art">KRISTE'S</p>
+              <p className="title_mobile_art">ART</p>
+            </div>
+            <div className="new_element_cont_mobile">
               <p className="new_element_mobile">CUSTOM ART PORTFOLIO</p>
               {/* need to add correct url */}
               <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
@@ -122,10 +122,10 @@ export default function Projectsmobile() {
         </div>
         <Link href="/resume" target="_blank">
           <div className="resume_container">
-            <Image className="icon_resume" src={srcResume} />
+            <Image className="icon_resume_mobile" src={srcResume} />
             <div className="resume">
-              <p className="title_mobile">MY_RESUME</p>
-              <p className="title_mobile">.PDF</p>
+              <p className="title_mobile_art">MY_RESUME</p>
+              <p className="title_mobile_art">.PDF</p>
             </div>
           </div>
         </Link>

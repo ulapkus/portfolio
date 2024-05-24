@@ -34,9 +34,6 @@ export default function Portfolio() {
       {isMobile ? (
         <div>
           <Landscapemobile />
-          <div className="filler">
-            <div className="filler_child"></div>
-          </div>
           <Aboutmemobile />
           <Projectsmobile />
           <Skillsmobile />
@@ -45,9 +42,6 @@ export default function Portfolio() {
       ) : (
         <div>
           <Landscape />
-          <div className="filler">
-            <div className="filler_child"></div>
-          </div>
           <Aboutme />
           <Projects />
           <Skills />
