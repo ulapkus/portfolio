@@ -13,13 +13,7 @@ import Landscape from "./components_web/landscape";
 import Landscapemobile from "./components_mobile/landscape_mobile";
 
 export default function Portfolio() {
-  // const [isMobile, setIsMobile] = useState(
-  //   window.matchMedia("(max-width: 768px)").matches
-  // );
-
-  const [isMobile, setIsMobile] = useState(false);
-
-
+const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
