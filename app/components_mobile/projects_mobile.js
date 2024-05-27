@@ -19,6 +19,12 @@ export default function Projectsmobile() {
   const [srcCalculator, setSrcCalculator] = useState(calculator);
   const [srcArt, setSrcArt] = useState(art);
   const [srcResume, setSrcResume] = useState(resume);
+
+  const handleButtonClick = () => {
+    const pdfUrl = "/myresume.pdf";
+    window.open(pdfUrl, "_blank");
+  };
+
   return (
     <div className="my_projects_mobile_container">
       <div className="my_projects_mobile">
@@ -117,18 +123,16 @@ export default function Projectsmobile() {
         onMouseEnter={() => setSrcResume(resumedark)}
         onMouseLeave={() => setSrcResume(resume)}
       >
-        <div className="tech_container">
+        <div className="tech_container_mobile">
           <p className="tech_mobile">PDF</p>
         </div>
-        <Link href="/resume" target="_blank">
-          <div className="resume_container">
-            <Image className="icon_resume_mobile" src={srcResume} />
-            <div className="resume">
-              <p className="title_mobile_art">MY_RESUME</p>
-              <p className="title_mobile_art">.PDF</p>
-            </div>
+        <div className="resume_container" onClick={handleButtonClick}>
+          <Image className="icon_resume_mobile" src={srcResume} />
+          <div className="resume">
+            <p className="title_mobile_art">MY_RESUME</p>
+            <p className="title_mobile_art">.PDF</p>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );

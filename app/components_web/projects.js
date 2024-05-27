@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import museum from "../../public/museum.png";
 import bunny from "../../public/bunny.png";
 import calculator from "../../public/calculator.png";
@@ -19,6 +18,12 @@ export default function Projects() {
   const [srcCalculator, setSrcCalculator] = useState(calculator);
   const [srcArt, setSrcArt] = useState(art);
   const [srcResume, setSrcResume] = useState(resume);
+
+  const handleButtonClick = () => {
+    const pdfUrl = "/myresume.pdf";
+    window.open(pdfUrl, "_blank");
+  };
+
   return (
     <div className="my_projects">
       <div className="my_projects_left">
@@ -118,15 +123,14 @@ export default function Projects() {
         <div className="tech_container">
           <p className="tech">PDF</p>
         </div>
-        <Link href="/resume" target="_blank">
-          <div className="resume_container">
-            <Image className="icon_resume" src={srcResume} />
-            <div className="resume">
-              <p className="title">MY_RESUME</p>
-              <p className="title">.PDF</p>
-            </div>
+        <div className="resume_container" onClick={handleButtonClick}>
+          <Image className="icon_resume" src={srcResume} />
+
+          <div className="resume">
+            <p className="title">MY_RESUME</p>
+            <p className="title">.PDF</p>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );

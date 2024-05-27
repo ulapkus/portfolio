@@ -357,14 +357,18 @@ h1 {
   border: 1px solid #fef7d4;
 }
 .website:hover,
-.website_mobile:hover {
+.website_mobile:hover,
+.my_projects_right_mobile:hover {
   background-color: #fef7d4;
 }
 
 .website:hover .title,
 .website:hover .tech,
 .website_mobile:hover .title_mobile,
-.website_mobile:hover .tech_mobile {
+.website_mobile:hover .tech_mobile,
+.my_projects_right_mobile:hover .title_mobile_art,
+.my_projects_right_mobile:hover .tech_mobile,
+.website_mobile:hover .title_mobile_art {
   color: black;
 }
 
@@ -451,6 +455,10 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 90%;
+}
+
+.resume_container:hover {
+  cursor: pointer;
 }
 
 .resume {

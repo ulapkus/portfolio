@@ -19,6 +19,8 @@ export default function Portfolio() {
 
   const [isMobile, setIsMobile] = useState(false);
 
+
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const mediaQuery = window.matchMedia("(max-width: 768px)");
