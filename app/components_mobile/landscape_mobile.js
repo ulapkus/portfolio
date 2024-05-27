@@ -41,7 +41,7 @@ export default function Landscapemobile() {
 
   return (
     <div className="background">
-      <Image className="backgroundimg" src={backgroundimg} />
+      <Image className="backgroundimg" src={backgroundimg} priority />
       <div className="heading_container_mobile">
         <h1 className="name_intro_mobile">HELLO, MY NAME IS</h1>
         <h1 className="name_mobile">ULA LAPKUS</h1>
@@ -49,6 +49,7 @@ export default function Landscapemobile() {
         <h1 className="name_caption_mobile">IN SALT LAKE CITY, UT</h1>
       </div>
       <Image
+        priority
         src={mountains}
         className="mountains_mobile"
         style={{
@@ -56,6 +57,7 @@ export default function Landscapemobile() {
         }}
       />
       <Image
+        priority
         className="buildings_mobile"
         src={buildingsmobile}
         style={{
@@ -63,6 +65,7 @@ export default function Landscapemobile() {
         }}
       />
       <Image
+        priority
         className="trees_mobile"
         src={treesmobile}
         style={{

@@ -40,7 +40,7 @@ export default function Projectsmobile() {
               <p className="tech_mobile">MONGODB</p>
             </div>
             <div className="proj_left_bunny_mobile">
-              <Image className="icon_bunny_mobile" src={srcBunny} />
+              <Image className="icon_bunny_mobile" src={srcBunny} priority />
             </div>
             <p className="title_mobile">HABIT RABBIT</p>
             <div className="new_element_cont_mobile">
@@ -60,7 +60,7 @@ export default function Projectsmobile() {
               <p className="tech_mobile">NEXT.JS</p>
             </div>
             <div className="proj_left_mobile">
-              <Image className="icon_museum_mobile" src={srcMuseum} />
+              <Image className="icon_museum_mobile" src={srcMuseum} priority />
             </div>{" "}
             <p className="title_mobile">MUSEUM MEMORY</p>
             <div className="new_element_cont_mobile">
@@ -82,8 +82,12 @@ export default function Projectsmobile() {
               <p className="tech_mobile">NEXT.JS</p>
             </div>
             <div className="proj_center_mobile">
-              <Image className="icon_calculator_mobile" src={srcCalculator} />
-            </div>{" "}
+              <Image
+                className="icon_calculator_mobile"
+                src={srcCalculator}
+                priority
+              />
+            </div>
             <p className="title_mobile">CALCULATOR</p>
             <div className="new_element_cont_mobile">
               <p className="new_element_mobile">A JAVASCRIPT CALCULATOR</p>
@@ -102,7 +106,7 @@ export default function Projectsmobile() {
               <p className="tech_mobile">NEXT.JS</p>
             </div>
             <div className="proj_center_mobile">
-              <Image className="icon_art_mobile" src={srcArt} />
+              <Image className="icon_art_mobile" src={srcArt} priority />
             </div>
             <div className="art_title">
               <p className="title_mobile_art">KRISTE'S</p>
@@ -127,7 +131,7 @@ export default function Projectsmobile() {
           <p className="tech_mobile">PDF</p>
         </div>
         <div className="resume_container" onClick={handleButtonClick}>
-          <Image className="icon_resume_mobile" src={srcResume} />
+          <Image className="icon_resume_mobile" src={srcResume} priority />
           <div className="resume">
             <p className="title_mobile_art">MY_RESUME</p>
             <p className="title_mobile_art">.PDF</p>
