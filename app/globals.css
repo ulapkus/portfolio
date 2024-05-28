@@ -127,7 +127,6 @@ h1 {
 .name {
   font-size: 4.6vw;
   letter-spacing: 0.2vw;
-  text-shadow: 0 0 18px #b1ffeba7;
   font-family: "pixconregular";
   padding: 0 0 12px 0;
   margin: 0;
@@ -945,7 +944,6 @@ a {
 .name_mobile {
   font-size: 8.6vw;
   letter-spacing: 0.2vw;
-  text-shadow: 0 0 18px #1a1b1aa7;
   font-family: "pixconregular";
   padding: 2vw 0 4vw 0;
   margin: 0;

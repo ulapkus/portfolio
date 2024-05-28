@@ -51,6 +51,7 @@ export default function Landscape() {
       <Image
         priority
         src={mountains}
+        alt="mountains"
         className="mountains"
         style={{
           transform: `translateY(${mountainsY}px) scale(${mountainsScale})`,
