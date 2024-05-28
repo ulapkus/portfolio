@@ -15,6 +15,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "erbos_draco_open_nbpregular";
+  src: url("../public/erbos_draco_open_nbp-webfont.woff2") format("woff2"),
+    url("../public/erbos_draco_open_nbp-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -113,7 +121,7 @@ h1 {
 .name_intro {
   font-size: 1vw;
   letter-spacing: 0.2vw;
-  font-family: "Erbos Draco 1st Open NBP";
+  font-family: "erbos_draco_open_nbpregular";
 }
 
 .name {
@@ -128,7 +136,7 @@ h1 {
 .name_caption {
   font-size: 1vw;
   letter-spacing: 0.2vw;
-  font-family: "Erbos Draco 1st Open NBP";
+  font-family: "erbos_draco_open_nbpregular";
   font-weight: 100;
   padding-bottom: 15px;
 }
@@ -930,7 +938,7 @@ a {
 .name_intro_mobile {
   font-size: 2.5vw;
   letter-spacing: 0.2vw;
-  font-family: "Erbos Draco 1st Open NBP";
+  font-family: "erbos_draco_open_nbpregular";
   white-space: nowrap;
 }
 
@@ -947,7 +955,7 @@ a {
 .name_caption_mobile {
   font-size: 2.5vw;
   letter-spacing: 0.2vw;
-  font-family: "Erbos Draco 1st Open NBP";
+  font-family: "erbos_draco_open_nbpregular";
   font-weight: 100;
   padding-bottom: 15px;
   white-space: nowrap;
