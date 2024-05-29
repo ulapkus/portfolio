@@ -13,7 +13,7 @@ import Landscape from "./components_web/landscape";
 import Landscapemobile from "./components_mobile/landscape_mobile";
 
 export default function Portfolio() {
-const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -36,7 +36,7 @@ const [isMobile, setIsMobile] = useState(false);
           <Landscapemobile />
           <Aboutmemobile />
           <Projectsmobile />
-          <Skillsmobile />
+          {/* <Skillsmobile /> */}
           <Footnotemobile />
         </div>
       ) : (
@@ -44,7 +44,7 @@ const [isMobile, setIsMobile] = useState(false);
           <Landscape />
           <Aboutme />
           <Projects />
-          <Skills />
+          {/* <Skills /> */}
           <Footnote />
         </div>
       )}
