@@ -55,7 +55,6 @@ export default function Skillsmobile() {
           <Image className="figmaimg skill" src={figmaimage} />
           <div className="img_caption">FIGMA</div>
         </div>
-        </div>
         <div className="skillimg_mobile">
           <Image className="htmlimg skill" src={htmlimage} />
           <div className="img_caption">HTML</div>
