@@ -87,14 +87,6 @@ export default function Skills() {
           <Image className="figmaimg skill" src={figmaimage} />
           <div className="img_caption">FIGMA</div>
         </div>
-        <div className="skillimg">
-          <Image className="tempimg skill" src={temptwo} />
-          <div className="img_caption">TEMP</div>
-        </div>
-        <div className="skillimg">
-          <Image className="temptwoimg skill" src={temptwo} />
-          <div className="img_caption">TEMP</div>
-        </div>
       </div>
     </div>
   );
