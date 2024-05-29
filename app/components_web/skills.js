@@ -56,14 +56,6 @@ export default function Skills() {
           <div className="img_caption">FIGMA</div>
         </div>
         <div className="skillimg">
-          <Image className="tempimg skill" src={temptwo} />
-          <div className="img_caption">TEMP</div>
-        </div>
-        <div className="skillimg">
-          <Image className="temptwoimg skill" src={temptwo} />
-          <div className="img_caption">TEMP</div>
-        </div>
-        <div className="skillimg">
           <Image className="htmlimg skill" src={htmlimage} />
           <div className="img_caption">HTML</div>
         </div>
