@@ -441,9 +441,10 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   gap: 5%;
-  width: 90%;
+  width: 100%;
+  padding-right: 1vw;
   height: 3.5vw;
 }
 
@@ -453,9 +454,18 @@ h1 {
   justify-content: flex-end;
   align-items: center;
   gap: 5%;
-  width: 90%;
-  height: 3.5vw;
-  padding: 0 0 0 4vw;
+  width: 93.5%;
+  height: 4.5vw;
+}
+
+.tech_container_resume_mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5%;
+  width: 98.5%;
+  height: 4.5vw;
 }
 
 .tech {
@@ -547,10 +557,12 @@ h1 {
   height: 100%;
   width: 45vw;
 }
+
 .my_projects_left_mobile {
   height: 100%;
   width: 50%;
 }
+
 .icon {
   object-fit: contain;
   height: 45%;
@@ -811,9 +823,8 @@ h1 {
   justify-content: center;
   align-items: center;
   position: relative;
-  color: white;
-  gap: 10%;
   height: 30vh;
+  padding: 0 20vw 0 20vw;
   width: 100vw;
 }
 
@@ -823,17 +834,17 @@ h1 {
   justify-content: center;
   align-items: center;
   position: relative;
-  color: white;
-  gap: 10%;
-  height: 10vh;
+  height: 15vh;
   width: 100vw;
+  padding: 0 2vw 0 2vw;
 }
+
 .footnote_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.4vw;
+  width: 100%;
 }
 
 .footnote_container_mobile {
@@ -842,11 +853,35 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 0.4vw;
+  width: 100%;
 }
 
-.footnote_container:hover,
+.footnote_link,
+.footnote_link_mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4vw;
+}
+
+.footnote_link:hover,
 .footnote_container_email:hover {
   cursor: pointer;
+}
+
+.footnote_link:hover .footnote_icon {
+  filter: drop-shadow(0px 0px 30px #fef7d4);
+}
+
+.footnote_container_email:hover .footnote_icon_email {
+  filter: drop-shadow(0 0 20px #fef7d4bb) drop-shadow(0 0 20px #fef7d4cf);
+}
+
+.footnote_link:hover .footnote_caption,
+.footnote_container_email:hover .footnote_caption_email {
+  text-shadow: 0px 0px 40px #fef7d4;
+  filter: drop-shadow(0px 0px 30px #fef7d4);
 }
 
 .footnote_container_email {
@@ -855,6 +890,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 0.9vw;
+  width: 100%;
 }
 
 .footnote_icon {
@@ -864,16 +900,20 @@ h1 {
 }
 
 .footnote_icon_email {
+  padding-top: 0.5vw;
   object-fit: contain;
   height: 4vw;
   width: auto;
 }
 
-.footnote_caption {
+.footnote_caption,
+.footnote_caption_email {
   color: #fef7d4;
   font-size: 0.9vw;
   font-family: "pixconregular";
   text-decoration: none;
+  letter-spacing: 0.1vw;
+  white-space: nowrap;
 }
 
 .footnote_caption:hover {
@@ -886,25 +926,30 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 0.9vw;
+  width: 100%;
 }
 
 .footnote_icon_mobile {
   object-fit: contain;
-  height: 6.5vw;
+  height: 8vw;
   width: auto;
 }
 
 .footnote_icon_email_mobile {
   object-fit: contain;
-  height: 6vw;
+  padding-top: 0.5vw;
+  height: 7.5vw;
   width: auto;
 }
 
 .footnote_caption_mobile {
+  flex: 0 0 auto;
   color: #fef7d4;
   font-size: 2vw;
   font-family: "pixconregular";
   text-decoration: none;
+  white-space: nowrap;
+  overflow: visible;
 }
 
 a {

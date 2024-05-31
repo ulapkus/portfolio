@@ -34,17 +34,17 @@ export default function Projects() {
         >
           <div className="tech_container">
             <p className="tech">REACT.JS</p>
-            <p className="tech">NEXTAUTH</p>
+            <p className="tech">NEXTAUTH.JS</p>
             <p className="tech">MONGODB</p>
           </div>
           <div className="proj_left_bunny">
-            <Image className="icon_bunny" src={srcBunny} />
+            <Image className="icon_bunny" src={srcBunny} alt="" />
             <p className="title">HABIT RABBIT</p>
           </div>
           <div className="new_element_cont">
             <p className="new_element">A HABIT TRACKING APP</p>
             <a href="https://www.habit-rabbit.xyz/" target="_blank">
-              <Image src={arrow} className="arrow" />
+              <Image src={arrow} className="arrow" alt="" />
             </a>
           </div>
         </div>
@@ -58,13 +58,13 @@ export default function Projects() {
             <p className="tech">NEXT.JS</p>
           </div>
           <div className="proj_left">
-            <Image className="icon_museum" src={srcMuseum} />
+            <Image className="icon_museum" src={srcMuseum} alt="" />
             <p className="title">MUSEUM MEMORY</p>
           </div>
           <div className="new_element_cont">
             <p className="new_element">MUSEUM-THEMED MEMORY GAME</p>
             <a href="https://www.museummatch.org/" target="_blank">
-              <Image src={arrow} className="arrow" />
+              <Image src={arrow} className="arrow" alt="" />
             </a>
           </div>
         </div>
@@ -80,13 +80,13 @@ export default function Projects() {
             <p className="tech">NEXT.JS</p>
           </div>
           <div className="proj_center">
-            <Image className="icon" src={srcCalculator} />
+            <Image className="icon" src={srcCalculator} alt="" />
             <p className="title">CALCULATOR</p>
           </div>
           <div className="new_element_cont">
             <p className="new_element">A JAVASCRIPT CALCULATOR</p>
             <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
-              <Image src={arrow} className="arrow" />
+              <Image src={arrow} className="arrow" alt="" />
             </a>
           </div>
         </div>
@@ -100,15 +100,18 @@ export default function Projects() {
             <p className="tech">NEXT.JS</p>
           </div>
           <div className="proj_center">
-            <Image className="icon_art" src={srcArt} />
+            <Image className="icon_art" src={srcArt} alt="" />
             <div className="art_title">
               <p className="title">KRISTE'S</p>
               <p className="title">ART</p>
             </div>
             <div className="new_element_cont">
               <p className="new_element">CUSTOM ART PORTFOLIO</p>
-              <a href="https://art-website-hq4n3genc-ulapkus-projects.vercel.app/" target="_blank">
-                <Image src={arrow} className="arrow" />
+              <a
+                href="https://art-website-hq4n3genc-ulapkus-projects.vercel.app/"
+                target="_blank"
+              >
+                <Image src={arrow} className="arrow" alt="" />
               </a>
             </div>
           </div>
@@ -123,7 +126,7 @@ export default function Projects() {
           <p className="tech">PDF</p>
         </div>
         <div className="resume_container" onClick={handleButtonClick}>
-          <Image className="icon_resume" src={srcResume} />
+          <Image className="icon_resume" src={srcResume} alt="" />
 
           <div className="resume">
             <p className="title">MY_RESUME</p>

@@ -9,7 +9,7 @@ export default function Aboutme() {
         <div className="hello_container">
           <p className="hello">HELLO</p>
           <p className="hello_two">
-            WORLD <Image className="wavinghand" src={wavinghand} />
+            WORLD <Image className="wavinghand" src={wavinghand}  alt=""/>
           </p>
         </div>
         <p className="hello_description">
@@ -26,7 +26,7 @@ export default function Aboutme() {
       <div className="right_element">
         <img
           className="ula_pixelart"
-          src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
+          src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png" alt=""
         />
         <p className="pixelart_caption">I'M ULA!</p>
       </div>

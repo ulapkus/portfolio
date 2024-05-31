@@ -35,18 +35,22 @@ export default function Projectsmobile() {
             onMouseLeave={() => setSrcBunny(bunny)}
           >
             <div className="tech_container_mobile">
-              <p className="tech_mobile">REACT.JS</p>
-              <p className="tech_mobile">NEXTAUTH</p>
+              <p className="tech_mobile">NEXTAUTH.JS</p>
               <p className="tech_mobile">MONGODB</p>
             </div>
             <div className="proj_left_bunny_mobile">
-              <Image className="icon_bunny_mobile" src={srcBunny} priority />
+              <Image
+                className="icon_bunny_mobile"
+                alt=""
+                src={srcBunny}
+                priority
+              />
             </div>
             <p className="title_mobile">HABIT RABBIT</p>
             <div className="new_element_cont_mobile">
               <p className="new_element_mobile">A HABIT TRACKING APP</p>
               <a href="https://www.habit-rabbit.xyz/" target="_blank">
-                <Image src={arrow} className="arrow" />
+                <Image src={arrow} className="arrow" alt="" />
               </a>
             </div>
           </div>
@@ -60,8 +64,13 @@ export default function Projectsmobile() {
               <p className="tech_mobile">NEXT.JS</p>
             </div>
             <div className="proj_left_mobile">
-              <Image className="icon_museum_mobile" src={srcMuseum} priority />
-            </div>{" "}
+              <Image
+                className="icon_museum_mobile"
+                src={srcMuseum}
+                alt=""
+                priority
+              />
+            </div>
             <p className="title_mobile">MUSEUM MEMORY</p>
             <div className="new_element_cont_mobile">
               <p className="new_element_mobile">MUSEUM-THEMED MEMORY GAME</p>
@@ -83,6 +92,7 @@ export default function Projectsmobile() {
             </div>
             <div className="proj_center_mobile">
               <Image
+                alt=""
                 className="icon_calculator_mobile"
                 src={srcCalculator}
                 priority
@@ -92,7 +102,7 @@ export default function Projectsmobile() {
             <div className="new_element_cont_mobile">
               <p className="new_element_mobile">A JAVASCRIPT CALCULATOR</p>
               <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
-                <Image src={arrow} className="arrow" />
+                <Image src={arrow} className="arrow" alt="" />
               </a>
             </div>
           </div>
@@ -106,7 +116,7 @@ export default function Projectsmobile() {
               <p className="tech_mobile">NEXT.JS</p>
             </div>
             <div className="proj_center_mobile">
-              <Image className="icon_art_mobile" src={srcArt} priority />
+              <Image className="icon_art_mobile" src={srcArt} alt="" priority />
             </div>
             <div className="art_title">
               <p className="title_mobile_art">KRISTE'S</p>
@@ -118,7 +128,7 @@ export default function Projectsmobile() {
                 href="https://art-website-hq4n3genc-ulapkus-projects.vercel.app/"
                 target="_blank"
               >
-                <Image src={arrow} className="arrow" />
+                <Image src={arrow} className="arrow" alt="" />
               </a>
             </div>
           </div>
@@ -129,7 +139,7 @@ export default function Projectsmobile() {
         onMouseEnter={() => setSrcResume(resumedark)}
         onMouseLeave={() => setSrcResume(resume)}
       >
-        <div className="tech_container_mobile">
+        <div className="tech_container_resume_mobile">
           <p className="tech_mobile">PDF</p>
         </div>
         <div className="resume_container" onClick={handleButtonClick}>

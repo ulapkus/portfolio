@@ -46,6 +46,7 @@ export default function Portfolio() {
           <Projects />
           {/* <Skills /> */}
           <Footnote />
+    
         </div>
       )}
     </div>

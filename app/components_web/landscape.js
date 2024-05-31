@@ -41,7 +41,7 @@ export default function Landscape() {
 
   return (
     <div className="background">
-      <Image className="backgroundimg" src={backgroundimg} priority />
+      <Image className="backgroundimg" src={backgroundimg} alt="" priority />
       <div className="heading_container">
         <h1 className="name_intro">HELLO, MY NAME IS</h1>
         <h1 className="name">ULA LAPKUS</h1>
@@ -51,7 +51,7 @@ export default function Landscape() {
       <Image
         priority
         src={mountains}
-        alt="mountains"
+        alt=""
         className="mountains"
         style={{
           transform: `translateY(${mountainsY}px) scale(${mountainsScale})`,
@@ -59,6 +59,7 @@ export default function Landscape() {
       />
       <Image
         className="buildings"
+        alt=""
         src={buildings}
         priority
         style={{
@@ -67,6 +68,7 @@ export default function Landscape() {
       />
       <Image
         priority
+        alt=""
         className="trees"
         src={trees}
         style={{
