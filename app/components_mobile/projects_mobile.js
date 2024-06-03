@@ -73,9 +73,13 @@ export default function Projectsmobile() {
             </div>
             <p className="title_mobile">MUSEUM MEMORY</p>
             <div className="new_element_cont_mobile">
-              <p className="new_element_mobile">MUSEUM-THEMED MEMORY GAME</p>
+              <div>
+                <p className="museum_element_mobile">MUSEUM-THEMED</p>
+                <p className="museum_element_mobile">MEMORY GAME</p>
+              </div>
+
               <a href="https://www.museummatch.org/" target="_blank">
-                <Image src={arrow} className="arrow" />
+                <Image src={arrow} className="arrow" alt="" />
               </a>
             </div>
           </div>
@@ -100,7 +104,7 @@ export default function Projectsmobile() {
             </div>
             <p className="title_mobile">CALCULATOR</p>
             <div className="new_element_cont_mobile">
-              <p className="new_element_mobile">A JAVASCRIPT CALCULATOR</p>
+              <p className="new_element_mobile">A CLASSIC CALCULATOR</p>
               <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
                 <Image src={arrow} className="arrow" alt="" />
               </a>
@@ -119,8 +123,8 @@ export default function Projectsmobile() {
               <Image className="icon_art_mobile" src={srcArt} alt="" priority />
             </div>
             <div className="art_title">
-              <p className="title_mobile_art">KRISTE'S</p>
               <p className="title_mobile_art">ART</p>
+              <p className="title_mobile_art">BY KRISTE</p>
             </div>
             <div className="new_element_cont_mobile">
               <p className="new_element_mobile">CUSTOM ART PORTFOLIO</p>
@@ -143,7 +147,12 @@ export default function Projectsmobile() {
           <p className="tech_mobile">PDF</p>
         </div>
         <div className="resume_container" onClick={handleButtonClick}>
-          <Image className="icon_resume_mobile" src={srcResume} priority />
+          <Image
+            className="icon_resume_mobile"
+            src={srcResume}
+            priority
+            alt=""
+          />
           <div className="resume">
             <p className="title_mobile_art">MY_RESUME</p>
             <p className="title_mobile_art">.PDF</p>

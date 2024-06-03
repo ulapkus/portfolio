@@ -144,13 +144,9 @@ h1 {
   opacity: 0;
 }
 
-.dark-tint {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.dark_tint {
   width: 100%;
-  z-index: 1;
+  z-index: 4;
 }
 
 .filler {
@@ -186,7 +182,7 @@ h1 {
   height: 100vh;
   width: 100%;
   padding: 4% 0 4% 0;
-  margin: 250vh 0 20vh 0;
+  margin: 250vh 0 10vh 0;
 }
 
 .left_element {
@@ -239,7 +235,7 @@ h1 {
 }
 
 .ula_pixelart_mobile {
-  height: 40%;
+  height: 45%;
   width: auto;
 }
 
@@ -273,7 +269,7 @@ h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2vw;
+  /* gap: 2vw; */
   height: auto;
   width: 100%;
   padding: 0;
@@ -301,17 +297,18 @@ h1 {
 }
 
 .hello_mobile {
-  font-size: 8.5vw;
+  font-size: 12vw;
   font-family: "pixconregular";
   text-wrap: nowrap;
-  margin: 0 0 -0.5vh 0;
+  margin: 0 0 -3vh 0;
   padding: 0 0 0 0;
   color: #fef7d4;
   text-shadow: 0 0 13px #fef7d4;
+  text-align: center;
 }
 
 .hello_two_mobile {
-  font-size: 8.5vw;
+  font-size: 12vw;
   font-family: "pixconregular";
   text-wrap: nowrap;
   color: #fef7d4;
@@ -403,6 +400,14 @@ h1 {
   align-items: center;
   padding: 0 1.3vw 0 1.3vw;
   width: 100%;
+}
+
+.museum_element_mobile {
+  color: black;
+  font-family: "pixconregular";
+  font-size: 1.8vw;
+  margin: 0;
+  padding: 0;
 }
 
 .new_element_cont_mobile {
@@ -834,9 +839,9 @@ h1 {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 15vh;
+  height: 20vh;
   width: 100vw;
-  padding: 0 2vw 0 2vw;
+  padding: 0 7vw 0 7vw;
 }
 
 .footnote_container {
@@ -986,13 +991,20 @@ a {
   white-space: nowrap;
 }
 
-.name_mobile {
-  font-size: 8.6vw;
+.ula_mobile {
+  font-size: 11vw;
   letter-spacing: 0.2vw;
   font-family: "pixconregular";
-  padding: 2vw 0 4vw 0;
-  margin: 0;
-  white-space: nowrap;
+  padding: 0;
+  margin: 0 0 -2vh 0;
+}
+
+.lapkus_mobile {
+  font-size: 11vw;
+  letter-spacing: 0.2vw;
+  font-family: "pixconregular";
+  padding: 0;
+  margin: 0 0 1vh 0;
 }
 
 .name_caption_mobile {

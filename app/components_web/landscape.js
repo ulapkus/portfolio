@@ -78,7 +78,7 @@ export default function Landscape() {
 
       {showTint && (
         <div
-          className="dark-tint"
+          className="dark_tint"
           style={{
             backgroundColor: `rgba(0, 0, 0, ${darkness})`,
             height: "100vh",
@@ -87,7 +87,7 @@ export default function Landscape() {
             left: 0,
             right: 0,
             bottom: 0,
-            zIndex: 1,
+            zIndex: 4,
           }}
         />
       )}

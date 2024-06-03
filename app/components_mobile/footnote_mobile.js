@@ -42,7 +42,7 @@ export default function Footnotemobile() {
           target="_blank"
           className="footnote_link_mobile"
         >
-          <Image src={linkedin} className="footnote_icon_mobile" />
+          <Image src={linkedin} className="footnote_icon_mobile" alt="" />
           <p className="footnote_caption_mobile">LINKEDIN</p>
         </a>
       </div>
@@ -52,7 +52,7 @@ export default function Footnotemobile() {
           target="_blank"
           className="footnote_link_mobile"
         >
-          <Image src={github} className="footnote_icon_mobile" />
+          <Image src={github} className="footnote_icon_mobile" alt=""/>
           <p className="footnote_caption_mobile">GITHUB</p>
         </a>
       </div>
@@ -62,7 +62,7 @@ export default function Footnotemobile() {
         onMouseOver={showInstruction}
         onMouseOut={hideInstruction}
       >
-        <Image src={emailicon} className="footnote_icon_email_mobile" />
+        <Image src={emailicon} className="footnote_icon_email_mobile" alt="" />
         <p className="footnote_caption_mobile">
           {copySuccessMessage} {instructions}
         </p>

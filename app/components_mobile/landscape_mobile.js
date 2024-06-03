@@ -41,15 +41,18 @@ export default function Landscapemobile() {
 
   return (
     <div className="background">
-      <Image className="backgroundimg" src={backgroundimg}  alt="" priority />
+      <Image className="backgroundimg" src={backgroundimg} alt="" priority />
       <div className="heading_container_mobile">
         <h1 className="name_intro_mobile">HELLO, MY NAME IS</h1>
-        <h1 className="name_mobile">ULA LAPKUS</h1>
+        <h1 className="ula_mobile">ULA</h1>
+        <h1 className="lapkus_mobile">LAPKUS</h1>
+
         <h1 className="name_caption_mobile">SELF-TAUGHT FULLSTACK ENGINEER</h1>
         <h1 className="name_caption_mobile">IN SALT LAKE CITY, UT</h1>
       </div>
       <Image
-        priority alt=""
+        priority
+        alt=""
         src={mountains}
         className="mountains_mobile"
         style={{
@@ -57,7 +60,8 @@ export default function Landscapemobile() {
         }}
       />
       <Image
-        priority alt=""
+        priority
+        alt=""
         className="buildings_mobile"
         src={buildingsmobile}
         style={{
@@ -65,7 +69,8 @@ export default function Landscapemobile() {
         }}
       />
       <Image
-        priority alt=""
+        priority
+        alt=""
         className="trees_mobile"
         src={treesmobile}
         style={{
@@ -75,7 +80,7 @@ export default function Landscapemobile() {
 
       {showTint && (
         <div
-          className="dark-tint"
+          className="dark_tint"
           style={{
             backgroundColor: `rgba(0, 0, 0, ${darkness})`,
             height: "200vh",
@@ -84,7 +89,7 @@ export default function Landscapemobile() {
             left: 0,
             right: 0,
             bottom: 0,
-            zIndex: 1,
+            zIndex: 4,
           }}
         />
       )}

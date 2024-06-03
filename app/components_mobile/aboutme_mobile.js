@@ -9,8 +9,9 @@ export default function Aboutmemobile() {
         <img
           className="ula_pixelart_mobile"
           src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
+          alt=""
         />
-        <p className="pixelart_caption_mobile">I'M ULA!</p>
+        {/* <p className="pixelart_caption_mobile">I'M ULA!</p> */}
       </div>
       <div className="left_element_mobile">
         <div className="hello_container_mobile">
@@ -18,7 +19,6 @@ export default function Aboutmemobile() {
             <p className="hello_mobile">HELLO</p>
             <p className="hello_two_mobile">WORLD</p>
           </div>
-          <Image className="wavinghand_mobile" src={wavinghand} />
         </div>
         <p className="hello_description_mobile">
           I'm a full-stack developer using JavaScript and React to turn pixels
