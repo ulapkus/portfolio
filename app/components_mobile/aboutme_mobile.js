@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import wavinghand from "../../public/wavinghand.png";
 
 export default function Aboutmemobile() {
   return (
@@ -11,7 +9,6 @@ export default function Aboutmemobile() {
           src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
           alt=""
         />
-        {/* <p className="pixelart_caption_mobile">I'M ULA!</p> */}
       </div>
       <div className="left_element_mobile">
         <div className="hello_container_mobile">

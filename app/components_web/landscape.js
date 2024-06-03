@@ -7,13 +7,6 @@ import trees from "../../public/trees.webp";
 
 export default function Landscape() {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [showTint, setShowTint] = useState(false);
-
-  useEffect(() => {
-    if (scrollPosition >= 1000 && scrollPosition < 1500) {
-      setShowTint(true);
-    }
-  }, [scrollPosition]);
 
   const darkness = Math.min(scrollPosition / 1500, 1);
 
@@ -75,22 +68,19 @@ export default function Landscape() {
           transform: `translateY(${treesY}px) scale(${treesScale})`,
         }}
       />
-
-      {showTint && (
-        <div
-          className="dark_tint"
-          style={{
-            backgroundColor: `rgba(0, 0, 0, ${darkness})`,
-            height: "100vh",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 4,
-          }}
-        />
-      )}
+      <div
+        className="dark_tint"
+        style={{
+          backgroundColor: `rgba(0, 0, 0, ${darkness})`,
+          height: "100vh",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 4,
+        }}
+      />
     </div>
   );
 }

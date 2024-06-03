@@ -42,7 +42,7 @@ export default function Projects() {
             <p className="title">HABIT RABBIT</p>
           </div>
           <div className="new_element_cont">
-            <p className="new_element">A HABIT TRACKING APP</p>
+            <p className="new_element">HABIT TRACKING APP</p>
             <a href="https://www.habit-rabbit.xyz/" target="_blank">
               <Image src={arrow} className="arrow" alt="" />
             </a>
@@ -84,7 +84,7 @@ export default function Projects() {
             <p className="title">CALCULATOR</p>
           </div>
           <div className="new_element_cont">
-            <p className="new_element">A CLASSIC CALCULATOR</p>
+            <p className="new_element">CLASSIC CALCULATOR</p>
             <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
               <Image src={arrow} className="arrow" alt="" />
             </a>

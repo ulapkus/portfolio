@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import museum from "../../public/museum.png";
 import bunny from "../../public/bunny.png";
 import calculator from "../../public/calculator.png";
@@ -48,7 +47,7 @@ export default function Projectsmobile() {
             </div>
             <p className="title_mobile">HABIT RABBIT</p>
             <div className="new_element_cont_mobile">
-              <p className="new_element_mobile">A HABIT TRACKING APP</p>
+              <p className="new_element_mobile">HABIT TRACKING APP</p>
               <a href="https://www.habit-rabbit.xyz/" target="_blank">
                 <Image src={arrow} className="arrow" alt="" />
               </a>
@@ -73,11 +72,7 @@ export default function Projectsmobile() {
             </div>
             <p className="title_mobile">MUSEUM MEMORY</p>
             <div className="new_element_cont_mobile">
-              <div>
-                <p className="museum_element_mobile">MUSEUM-THEMED</p>
-                <p className="museum_element_mobile">MEMORY GAME</p>
-              </div>
-
+              <p className="museum_element_mobile">MEMORY GAME</p>
               <a href="https://www.museummatch.org/" target="_blank">
                 <Image src={arrow} className="arrow" alt="" />
               </a>
@@ -104,7 +99,7 @@ export default function Projectsmobile() {
             </div>
             <p className="title_mobile">CALCULATOR</p>
             <div className="new_element_cont_mobile">
-              <p className="new_element_mobile">A CLASSIC CALCULATOR</p>
+              <p className="new_element_mobile">CLASSIC CALCULATOR</p>
               <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
                 <Image src={arrow} className="arrow" alt="" />
               </a>

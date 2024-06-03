@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Footnote from "./components_web/footnote";
-import Footnotemobile from "./components_mobile/footnote_mobile";
+import Socials from "./components_web/socials";
+import Socialsmobile from "./components_mobile/socials_mobile";
 import Skills from "./components_web/skills";
 import Skillsmobile from "./components_mobile/skills_mobile";
 import Projects from "./components_web/projects";
@@ -37,7 +37,7 @@ export default function Portfolio() {
           <Aboutmemobile />
           <Projectsmobile />
           {/* <Skillsmobile /> */}
-          <Footnotemobile />
+          <Socialsmobile />
         </div>
       ) : (
         <div>
@@ -45,7 +45,7 @@ export default function Portfolio() {
           <Aboutme />
           <Projects />
           {/* <Skills /> */}
-          <Footnote />
+          <Socials />
     
         </div>
       )}

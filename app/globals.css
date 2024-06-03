@@ -182,7 +182,7 @@ h1 {
   height: 100vh;
   width: 100%;
   padding: 4% 0 4% 0;
-  margin: 250vh 0 10vh 0;
+  margin: 150vh 0 10vh 0;
 }
 
 .left_element {
@@ -530,7 +530,7 @@ h1 {
   position: relative;
   height: 100%;
   width: 100vw;
-  padding: 6% 2% 6% 2%;
+  padding: 6% 2% 0 2%;
   margin: 0;
 }
 
@@ -828,7 +828,7 @@ h1 {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 30vh;
+  height: 45vh;
   padding: 0 20vw 0 20vw;
   width: 100vw;
 }
