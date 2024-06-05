@@ -35,13 +35,19 @@ body {
   height: 100vh;
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .background {
   position: sticky;
   top: 0px;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  opacity: 1;
+  z-index: 1;
 }
 
 .backgroundimg {
@@ -53,7 +59,6 @@ body {
 
 .mountains {
   position: absolute;
-  overflow: hidden;
   width: 100%;
   z-index: 2;
   height: 135vh;
@@ -61,7 +66,6 @@ body {
 
 .buildings {
   position: absolute;
-  overflow: hidden;
   height: 90vh;
   width: 100%;
   z-index: 3;
@@ -69,7 +73,6 @@ body {
 
 .trees {
   position: absolute;
-  overflow: hidden;
   width: 100%;
   z-index: 4;
   height: 100vh;
@@ -109,7 +112,7 @@ body {
   align-items: center;
   text-align: center;
   height: 50%;
-  z-index: 1;
+  z-index: 5;
 }
 
 h1 {
@@ -140,23 +143,31 @@ h1 {
   padding-bottom: 15px;
 }
 
-.hidden {
-  opacity: 0;
-}
-
 .dark_tint {
   width: 100%;
-  z-index: 4;
 }
 
-.filler {
+.foreground {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  overflow: hidden;
+  z-index: 2;
+  width: 100%;
+  margin-top: 50vh;
+}
+
+.about_me_section {
+  position: relative;
+  z-index: 6;
+  background-color: black;
+  width: 100%;
+  margin-top: 10vh;
+}
+
+.stars {
+  position: relative;
+  z-index: 7;
+  height: 100vh;
+  width: 100%;
+  margin-top: 100vh;
 }
 
 .about_me {
@@ -169,7 +180,8 @@ h1 {
   height: 100vh;
   width: 100%;
   padding: 4% 0 4% 0;
-  margin: 120vh 0 0 0;
+  margin: 5vh 0 0 0;
+  z-index: 8;
 }
 
 .about_me_mobile {
@@ -269,7 +281,6 @@ h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* gap: 2vw; */
   height: auto;
   width: 100%;
   padding: 0;
@@ -532,6 +543,7 @@ h1 {
   width: 100vw;
   padding: 6% 2% 0 2%;
   margin: 0;
+  z-index: 1;
 }
 
 .my_projects_mobile_container {
@@ -831,6 +843,7 @@ h1 {
   height: 45vh;
   padding: 0 20vw 0 20vw;
   width: 100vw;
+  z-index: 1;
 }
 
 .footnote_mobile {
@@ -1042,7 +1055,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 7.5%; */
   width: 100%;
   height: 100%;
   padding: 0 0 0 0;
@@ -1051,7 +1063,6 @@ a {
 
 .title_mobile {
   font-size: 3vw;
-  /* padding: 4vw 0 4vw 0; */
   margin: 0 0 2vw 0;
   font-family: "pixconregular";
   text-wrap: nowrap;

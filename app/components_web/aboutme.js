@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import wavinghand from "../../public/wavinghand.png";
+import stars from "../../public/stars.gif";
 
 export default function Aboutme() {
   return (
+    <div className="about_me_section">
     <div className="about_me">
       <div className="left_element">
         <div className="hello_container">
@@ -30,6 +32,6 @@ export default function Aboutme() {
         />
         <p className="pixelart_caption">I'M ULA!</p>
       </div>
-    </div>
+    </div></div>
   );
 }

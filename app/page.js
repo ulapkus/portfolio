@@ -42,7 +42,7 @@ export default function Portfolio() {
       ) : (
         <div>
           <Landscape />
-          <Aboutme />
+          {/* <Aboutme /> */}
           <Projects />
           {/* <Skills /> */}
           <Socials />
