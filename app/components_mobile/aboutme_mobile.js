@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Aboutmemobile() {
   return (
+    <div className="about_me_section_mobile">
     <div className="about_me_mobile">
       <div className="right_element_mobile">
         <img
@@ -28,6 +29,7 @@ export default function Aboutmemobile() {
           traveling.
         </p>
       </div>
+    </div>
     </div>
   );
 }

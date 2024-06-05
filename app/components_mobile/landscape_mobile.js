@@ -4,6 +4,8 @@ import backgroundimg from "../../public/background-smaller.webp";
 import mountains from "../../public/mountains.webp";
 import buildingsmobile from "../../public/buildings v2.webp";
 import treesmobile from "../../public/trees v2.webp";
+import stars from "../../public/stars.gif";
+import Aboutmemobile from "./aboutme_mobile";
 
 export default function Landscapemobile() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -83,6 +85,10 @@ export default function Landscapemobile() {
           zIndex: 4,
         }}
       />
+      <div className="foreground_mobile">
+        <Image className="stars" src={stars} alt="" />
+        <Aboutmemobile />
+      </div>
     </div>
   );
 }

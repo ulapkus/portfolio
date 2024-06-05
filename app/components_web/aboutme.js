@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import wavinghand from "../../public/wavinghand.png";
-import stars from "../../public/stars.gif";
 
 export default function Aboutme() {
   return (
