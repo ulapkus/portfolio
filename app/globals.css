@@ -406,7 +406,8 @@ h1 {
 .website_mobile:hover .tech_mobile,
 .my_projects_right_mobile:hover .title_mobile_art,
 .my_projects_right_mobile:hover .tech_mobile,
-.website_mobile:hover .title_mobile_art {
+.website_mobile:hover .title_mobile_art,
+.website:hover .title_art {
   color: black;
 }
 
@@ -426,6 +427,7 @@ h1 {
   align-items: center;
   padding: 0 1.3vw 0 1.3vw;
   width: 100%;
+  height: 5vh;
 }
 
 .museum_element_mobile {
@@ -542,7 +544,16 @@ h1 {
 .title {
   font-size: 1.8vw;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 0;
+  font-family: "pixconregular";
+  text-wrap: nowrap;
+  color: #fef7d4;
+}
+
+.title_art {
+  font-size: 1.8vw;
+  padding: 0;
+  margin: -1vh 0 -1.5vh 0;
   font-family: "pixconregular";
   text-wrap: nowrap;
   color: #fef7d4;
@@ -696,6 +707,7 @@ h1 {
 
 .art_title {
   text-align: center;
+  margin-top: 1vh;
 }
 
 .my_projects_right {

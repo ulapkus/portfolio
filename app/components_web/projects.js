@@ -102,18 +102,15 @@ export default function Projects() {
           <div className="proj_center">
             <Image className="icon_art" src={srcArt} alt="" />
             <div className="art_title">
-              <p className="title">ART</p>
-              <p className="title">BY KRISTE</p>
+              <p className="title_art">ART</p>
+              <p className="title_art">BY KRISTE</p>
             </div>
-            <div className="new_element_cont">
-              <p className="new_element">CUSTOM ART PORTFOLIO</p>
-              <a
-                href="https://art-website-hq4n3genc-ulapkus-projects.vercel.app/"
-                target="_blank"
-              >
-                <Image src={arrow} className="arrow" alt="" />
-              </a>
-            </div>
+          </div>
+          <div className="new_element_cont">
+            <p className="new_element">CUSTOM ART PORTFOLIO</p>
+            <a href="www.artbykriste.com" target="_blank">
+              <Image src={arrow} className="arrow" alt="" />
+            </a>
           </div>
         </div>
       </div>
