@@ -544,7 +544,7 @@ h1 {
 .title {
   font-size: 1.8vw;
   padding: 0;
-  margin: 0 0 0 0;
+  margin: 0;
   font-family: "pixconregular";
   text-wrap: nowrap;
   color: #fef7d4;
