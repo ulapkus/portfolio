@@ -1,6 +1,8 @@
 # Coding Portfolio
 This is my coding portfolio! Here you'll learn a bit about me and explore my past projects. 
 
+![](/public/portfoliopreview.gif "Optional title")
+
 ## Features
 - Multi-layered parallax scrolling 
 - View projects & resume
