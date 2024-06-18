@@ -42,7 +42,7 @@ export default function Landscapemobile() {
         <h1 className="ula_mobile">ULA</h1>
         <h1 className="lapkus_mobile">LAPKUS</h1>
 
-        <h1 className="name_caption_mobile">SELF-TAUGHT FULLSTACK ENGINEER</h1>
+        <h1 className="name_caption_mobile">FULLSTACK ENGINEER</h1>
         <h1 className="name_caption_mobile">IN SALT LAKE CITY, UT</h1>
       </div>
       <Image

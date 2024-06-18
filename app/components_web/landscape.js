@@ -43,7 +43,7 @@ export default function Landscape() {
         <div className="heading_container">
           <h1 className="name_intro">HELLO, MY NAME IS</h1>
           <h1 className="name">ULA LAPKUS</h1>
-          <h1 className="name_caption">SELF-TAUGHT FULLSTACK ENGINEER</h1>
+          <h1 className="name_caption">FULLSTACK ENGINEER</h1>
           <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
         </div>
         <Image

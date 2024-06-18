@@ -123,10 +123,7 @@ export default function Projectsmobile() {
             </div>
             <div className="new_element_cont_mobile">
               <p className="new_element_mobile">CUSTOM ART PORTFOLIO</p>
-              <a
-                href="https://art-website-hq4n3genc-ulapkus-projects.vercel.app/"
-                target="_blank"
-              >
+              <a href="https://www.artbykriste.com/" target="_blank">
                 <Image src={arrow} className="arrow" alt="" />
               </a>
             </div>

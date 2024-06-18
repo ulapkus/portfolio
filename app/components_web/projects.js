@@ -108,7 +108,7 @@ export default function Projects() {
           </div>
           <div className="new_element_cont">
             <p className="new_element">CUSTOM ART PORTFOLIO</p>
-            <a href="www.artbykriste.com" target="_blank">
+            <a href="https://www.artbykriste.com/" target="_blank">
               <Image src={arrow} className="arrow" alt="" />
             </a>
           </div>
