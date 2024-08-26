@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import wavinghand from "../../public/wavinghand.png";
+import ulaPixel from "../../public/ulaPixelArt.png";
 
 export default function Aboutme() {
   return (
@@ -25,11 +26,7 @@ export default function Aboutme() {
           </p>
         </div>
         <div className="right_element">
-          <img
-            className="ula_pixelart"
-            src="https://i.ibb.co/LPxpCg3/ula-pixel-art.png"
-            alt=""
-          />
+          <Image priority className="ula_pixelart" src={ulaPixel} alt="" />
           <p className="pixelart_caption">I'M ULA!</p>
         </div>
       </div>

@@ -6,34 +6,37 @@ import Image from "next/image";
 
 export default function Socialsmobile() {
   const [copySuccessMessage, setCopySuccessMessage] = useState("");
-  const [instructions, setInstructions] = useState("EMAIL ME");
+  const [instructions, setInstructions] = useState("EMAIL");
   const email = "ulapkus@gmail.com";
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopySuccessMessage("");
-      setInstructions("EMAIL ME");
+      setInstructions("EMAIL");
     }, 5000);
     return () => clearTimeout(timer);
   }, [copySuccessMessage]);
 
-  function showInstruction() {
-    setInstructions(`CLICK TO COPY EMAIL`);
+  function hideInstruction() {
+    if (copySuccessMessage === "") {
+      setInstructions("EMAIL");
+    } else {
+      setInstructions("");
+    }
   }
 
-  function hideInstruction() {
-    if (copySuccessMessage == "EMAIL COPIED!") {
-      setInstructions("");
-    } else {
-      setInstructions("EMAIL ME");
+  function showInstruction() {
+    if (copySuccessMessage === "") {
+      setInstructions("CLICK TO COPY EMAIL");
     }
   }
 
   function copyEmail() {
     navigator.clipboard.writeText(email);
-    setCopySuccessMessage(`EMAIL COPIED!`);
+    setCopySuccessMessage("EMAIL COPIED!");
     setInstructions("");
   }
+
   return (
     <div className="footnote_mobile">
       <div className="footnote_container_mobile">

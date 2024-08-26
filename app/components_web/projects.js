@@ -27,92 +27,92 @@ export default function Projects() {
   return (
     <div className="my_projects">
       <div className="my_projects_left">
-        <div
-          className="website"
-          onMouseEnter={() => setSrcBunny(bunnydark)}
-          onMouseLeave={() => setSrcBunny(bunny)}
-        >
-          <div className="tech_container">
-            <p className="tech">REACT.JS</p>
-            <p className="tech">NEXTAUTH.JS</p>
-            <p className="tech">MONGODB</p>
-          </div>
-          <div className="proj_left_bunny">
-            <Image className="icon_bunny" src={srcBunny} alt="" />
-            <p className="title">HABIT RABBIT</p>
-          </div>
-          <div className="new_element_cont">
-            <p className="new_element">HABIT TRACKING APP</p>
-            <a href="https://www.habit-rabbit.xyz/" target="_blank">
+        <a href="https://www.habit-rabbit.xyz/" target="_blank">
+          <div
+            className="website"
+            onMouseEnter={() => setSrcBunny(bunnydark)}
+            onMouseLeave={() => setSrcBunny(bunny)}
+          >
+            <div className="tech_container">
+              <p className="tech">REACT.JS</p>
+              <p className="tech">NEXTAUTH.JS</p>
+              <p className="tech">MONGODB</p>
+            </div>
+            <div className="proj_left_bunny">
+              <Image className="icon_bunny" src={srcBunny} alt="" />
+              <p className="title">HABIT RABBIT</p>
+            </div>
+            <div className="new_element_cont">
+              <p className="new_element">HABIT TRACKING APP</p>
               <Image src={arrow} className="arrow" alt="" />
-            </a>
-          </div>
-        </div>
-        <div
-          className="website"
-          onMouseEnter={() => setSrcMuseum(museumdark)}
-          onMouseLeave={() => setSrcMuseum(museum)}
-        >
-          <div className="tech_container">
-            <p className="tech">REACT.JS</p>
-            <p className="tech">NEXT.JS</p>
-          </div>
-          <div className="proj_left">
-            <Image className="icon_museum" src={srcMuseum} alt="" />
-            <p className="title">MUSEUM MEMORY</p>
-          </div>
-          <div className="new_element_cont">
-            <p className="new_element">MUSEUM-THEMED MEMORY GAME</p>
-            <a href="https://www.museummatch.org/" target="_blank">
-              <Image src={arrow} className="arrow" alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="my_projects_center">
-        <div
-          className="website"
-          onMouseEnter={() => setSrcCalculator(calculatordark)}
-          onMouseLeave={() => setSrcCalculator(calculator)}
-        >
-          <div className="tech_container">
-            <p className="tech">REACT.JS</p>
-            <p className="tech">NEXT.JS</p>
-          </div>
-          <div className="proj_center">
-            <Image className="icon" src={srcCalculator} alt="" />
-            <p className="title">CALCULATOR</p>
-          </div>
-          <div className="new_element_cont">
-            <p className="new_element">CLASSIC CALCULATOR</p>
-            <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
-              <Image src={arrow} className="arrow" alt="" />
-            </a>
-          </div>
-        </div>
-        <div
-          className="website"
-          onMouseEnter={() => setSrcArt(artdark)}
-          onMouseLeave={() => setSrcArt(art)}
-        >
-          <div className="tech_container">
-            <p className="tech">REACT.JS</p>
-            <p className="tech">NEXT.JS</p>
-          </div>
-          <div className="proj_center">
-            <Image className="icon_art" src={srcArt} alt="" />
-            <div className="art_title">
-              <p className="title_art">ART</p>
-              <p className="title_art">BY KRISTE</p>
             </div>
           </div>
-          <div className="new_element_cont">
-            <p className="new_element">CUSTOM ART PORTFOLIO</p>
-            <a href="https://www.artbykriste.com/" target="_blank">
+        </a>
+        <a href="https://www.museummatch.org/" target="_blank">
+          <div
+            className="website"
+            onMouseEnter={() => setSrcMuseum(museumdark)}
+            onMouseLeave={() => setSrcMuseum(museum)}
+          >
+            <div className="tech_container">
+              <p className="tech">REACT.JS</p>
+              <p className="tech">NEXT.JS</p>
+            </div>
+            <div className="proj_left">
+              <Image className="icon_museum" src={srcMuseum} alt="" />
+              <p className="title">MUSEUM MEMORY</p>
+            </div>
+            <div className="new_element_cont">
+              <p className="new_element">MUSEUM-THEMED MEMORY GAME</p>
               <Image src={arrow} className="arrow" alt="" />
-            </a>
+            </div>
           </div>
-        </div>
+        </a>
+      </div>
+      <div className="my_projects_center">
+        <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
+          <div
+            className="website"
+            onMouseEnter={() => setSrcCalculator(calculatordark)}
+            onMouseLeave={() => setSrcCalculator(calculator)}
+          >
+            <div className="tech_container">
+              <p className="tech">REACT.JS</p>
+              <p className="tech">NEXT.JS</p>
+            </div>
+            <div className="proj_center">
+              <Image className="icon" src={srcCalculator} alt="" />
+              <p className="title">CALCULATOR</p>
+            </div>
+            <div className="new_element_cont">
+              <p className="new_element">CLASSIC CALCULATOR</p>
+              <Image src={arrow} className="arrow" alt="" />
+            </div>
+          </div>
+        </a>
+        <a href="https://www.artbykriste.com/" target="_blank">
+          <div
+            className="website"
+            onMouseEnter={() => setSrcArt(artdark)}
+            onMouseLeave={() => setSrcArt(art)}
+          >
+            <div className="tech_container">
+              <p className="tech">REACT.JS</p>
+              <p className="tech">NEXT.JS</p>
+            </div>
+            <div className="proj_center">
+              <Image className="icon_art" src={srcArt} alt="" />
+              <div className="art_title">
+                <p className="title_art">ART</p>
+                <p className="title_art">BY KRISTE</p>
+              </div>
+            </div>
+            <div className="new_element_cont">
+              <p className="new_element">CUSTOM ART PORTFOLIO</p>
+              <Image src={arrow} className="arrow" alt="" />
+            </div>
+          </div>
+        </a>
       </div>
       <div
         className="my_projects_right"
