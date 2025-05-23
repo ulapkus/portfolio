@@ -615,6 +615,17 @@ h1 {
   width: auto;
 }
 
+.wanderlog {
+  color: #f75940;
+  font-weight: 800;
+}
+
+.icon-amberqueen {
+  object-fit: contain;
+  height: 35%;
+  width: auto;
+}
+
 .icon_calculator_mobile {
   object-fit: contain;
   height: 55%;

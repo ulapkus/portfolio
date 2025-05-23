@@ -2,23 +2,22 @@ import React, { useState } from "react";
 import Image from "next/image";
 import museum from "../../public/museum.png";
 import bunny from "../../public/bunny.png";
-import calculator from "../../public/calculator.png";
 import resume from "../../public/resume.png";
 import art from "../../public/art.png";
 import artdark from "../../public/art_dark.png";
 import museumdark from "../../public/museum_dark.png";
-import calculatordark from "../../public/calculator_dark.png";
 import bunnydark from "../../public/bunny_dark.png";
 import resumedark from "../../public/resumdark.png";
 import arrow from "../../public/arrow.png";
+import amberqueen from "../../public/amberqueen.png";
+import amberqueendark from "../../public/amberqueendark.png";
 
 export default function Projects() {
   const [srcBunny, setSrcBunny] = useState(bunny);
   const [srcMuseum, setSrcMuseum] = useState(museum);
-  const [srcCalculator, setSrcCalculator] = useState(calculator);
   const [srcArt, setSrcArt] = useState(art);
   const [srcResume, setSrcResume] = useState(resume);
-
+  const [srcAmberQueen, setSrcAmberQueen] = useState(amberqueen);
   const handleButtonClick = () => {
     const pdfUrl = "/myresume.pdf";
     window.open(pdfUrl, "_blank");
@@ -27,7 +26,7 @@ export default function Projects() {
   return (
     <div className="my_projects">
       <div className="my_projects_left">
-        <a href="https://www.habit-rabbit.xyz/" target="_blank">
+        <a href="https://www.habit-rabbit.com/" target="_blank">
           <div
             className="website"
             onMouseEnter={() => setSrcBunny(bunnydark)}
@@ -48,7 +47,7 @@ export default function Projects() {
             </div>
           </div>
         </a>
-        <a href="https://www.museummatch.org/" target="_blank">
+        <a href="https://www.museummemory.com/" target="_blank">
           <div
             className="website"
             onMouseEnter={() => setSrcMuseum(museumdark)}
@@ -60,7 +59,7 @@ export default function Projects() {
             </div>
             <div className="proj_left">
               <Image className="icon_museum" src={srcMuseum} alt="" />
-              <p className="title">MUSEUM MEMORY</p>
+              <p className="title">MEMORY MUSEUM</p>
             </div>
             <div className="new_element_cont">
               <p className="new_element">MUSEUM-THEMED MEMORY GAME</p>
@@ -70,22 +69,22 @@ export default function Projects() {
         </a>
       </div>
       <div className="my_projects_center">
-        <a href="https://calculator-ulapkus.vercel.app/" target="_blank">
+        <a href="https://vyto-website.vercel.app/" target="_blank">
           <div
             className="website"
-            onMouseEnter={() => setSrcCalculator(calculatordark)}
-            onMouseLeave={() => setSrcCalculator(calculator)}
+            onMouseEnter={() => setSrcAmberQueen(amberqueendark)}
+            onMouseLeave={() => setSrcAmberQueen(amberqueen)}
           >
             <div className="tech_container">
               <p className="tech">REACT.JS</p>
               <p className="tech">NEXT.JS</p>
             </div>
             <div className="proj_center">
-              <Image className="icon" src={srcCalculator} alt="" />
-              <p className="title">CALCULATOR</p>
+              <Image className="icon-amberqueen" src={srcAmberQueen} alt="" />
+              <p className="title">AMBER QUEEN</p>
             </div>
             <div className="new_element_cont">
-              <p className="new_element">CLASSIC CALCULATOR</p>
+              <p className="new_element">BOOK PROMOTION SITE</p>
               <Image src={arrow} className="arrow" alt="" />
             </div>
           </div>

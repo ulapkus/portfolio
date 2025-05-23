@@ -19,15 +19,14 @@ export default function Aboutmemobile() {
             </div>
           </div>
           <p className="hello_description_mobile">
-            I'm a full stack developer using React and React Native to turn
-            pixels on a screen into full-fledged user experiences. I'm currently
-            interning for a food ordering app called Savor but I'm eager to find
-            a more permanent position where I can continue to grow and make an
-            impact.
+            I'm a full-stack developer using React and React Native to turn
+            pixels on a screen into full-fledged user experiences. My dream
+            would be to work for a company passionate about traveling (I'm
+            talking about you, <span className="wanderlog">Wanderlog</span>!)
           </p>
           <p className="hello_description_mobile">
-            Beyond the screen, you'll find me hiking, listening to audiobooks,
-            and traveling.
+            Beyond the screen, you'll find me hiking with friends, listening to
+            audiobooks, and traveling.
           </p>
         </div>
       </div>
