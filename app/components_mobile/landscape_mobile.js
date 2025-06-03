@@ -43,7 +43,7 @@ export default function Landscapemobile() {
         <h1 className="lapkus_mobile">LAPKUS</h1>
 
         <h1 className="name_caption_mobile">FULL STACK DEVELOPER</h1>
-        <h1 className="name_caption_mobile">IN SALT LAKE CITY, UT</h1>
+        <h1 className="name_caption_mobile">IN BOSTON, MA</h1>
       </div>
       <Image
         priority

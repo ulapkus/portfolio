@@ -44,7 +44,7 @@ export default function Landscape() {
           <h1 className="name_intro">HELLO, MY NAME IS</h1>
           <h1 className="name">ULA LAPKUS</h1>
           <h1 className="name_caption">FULL STACK DEVELOPER</h1>
-          <h1 className="name_caption">IN SALT LAKE CITY, UT</h1>
+          <h1 className="name_caption">IN BOSTON, MA</h1>
         </div>
         <Image
           priority

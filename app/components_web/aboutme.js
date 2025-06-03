@@ -16,9 +16,9 @@ export default function Aboutme() {
           </div>
           <p className="hello_description">
             I'm a full-stack developer using React and React Native to turn
-            pixels on a screen into full-fledged user experiences. My dream
-            would be to work for a company passionate about traveling (I'm
-            talking about you, <span className="wanderlog">Wanderlog</span>!)
+            pixels on a screen into full-fledged user experiences. I have an eye
+            for design and am passionate about turning code into fully fledged
+            user experiences.
           </p>
           <p className="hello_description">
             Beyond the screen, you'll find me hiking, listening to audiobooks,
